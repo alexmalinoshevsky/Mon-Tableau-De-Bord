@@ -87,7 +87,7 @@ cards:
             cards:
               - type: "custom:swiss-army-knife-card"
                 entities:
-                  - entity: sensor.ajout_sensor_temperature_salle_a_manger
+                  - entity: sensor.capteur_salle_a_manger_temperature
                     decimals: 0
                 layout:
                   template:
@@ -100,7 +100,7 @@ cards:
 
               - type: "custom:swiss-army-knife-card"
                 entities:
-                  - entity: sensor.ajout_sensor_humidite_salle_a_manger
+                  - entity: sensor.capteur_salle_a_manger_humidity
                     decimals: 0
                 layout:
                   template:
