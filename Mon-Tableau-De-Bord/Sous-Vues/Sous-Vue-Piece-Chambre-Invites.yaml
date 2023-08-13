@@ -1,4 +1,4 @@
-# Sous Vue Chambre des Maîtres
+# Sous Vue Chambre des Invités
 
 theme: MonTableau
 title: Chambre des Invités
@@ -45,7 +45,7 @@ cards:
                 entity: climate.sinope_thermostat_chambre_invites
                 icon: mdi:thermostat-box
                 name: Souhaitable
-              - entity: sensor.ajout_sensor_humidite_chambre_invites
+              - entity: sensor.capteur_chambre_invites_humidity
                 unit: "%"
               - attribute: hourly_kwh
                 decimals: 1
@@ -85,7 +85,7 @@ cards:
             cards:
               - type: "custom:swiss-army-knife-card"
                 entities:
-                  - entity: sensor.ajout_sensor_temperature_chambre_invites
+                  - entity: sensor.capteur_chambre_invites_temperature  
                     decimals: 0
                 layout:
                   template:
@@ -98,7 +98,7 @@ cards:
 
               - type: "custom:swiss-army-knife-card"
                 entities:
-                  - entity: sensor.ajout_sensor_humidite_chambre_invites
+                  - entity: sensor.capteur_chambre_invites_humidity
                     decimals: 0
                 layout:
                   template:
