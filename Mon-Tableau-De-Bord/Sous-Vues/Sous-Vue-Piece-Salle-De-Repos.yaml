@@ -99,7 +99,7 @@ cards:
                 entity: climate.sinope_thermostat_salle_repos
                 icon: mdi:thermostat-box
                 name: Souhaitable
-              - entity: sensor.ajout_sensor_humidite_salle_de_repos
+              - entity: sensor.sensibo_humiditee_courante_salle_de_repos 
                 unit: "%"
               - attribute: hourly_kwh
                 decimals: 1
@@ -139,7 +139,7 @@ cards:
             cards:
               - type: "custom:swiss-army-knife-card"
                 entities:
-                  - entity: sensor.ajout_sensor_temperature_salle_de_repos
+                  - entity: sensor.sensibo_temperature_courante_salle_de_repos
                     decimals: 0
                 layout:
                   template:
@@ -152,7 +152,7 @@ cards:
 
               - type: "custom:swiss-army-knife-card"
                 entities:
-                  - entity: sensor.ajout_sensor_humidite_salle_de_repos
+                  - entity: sensor.sensibo_humiditee_courante_salle_de_repos 
                     decimals: 0
                 layout:
                   template:
