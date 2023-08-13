@@ -11,7 +11,7 @@ sensor:
         friendly_name: "État de la caméra allée"
         value_template:  >
           {% if is_state('binary_sensor.blink_allee_camera_armed', 'on') %} 
-            OK                      
+            CAOK                      
           {% else %}
             PASOK
           {% endif %}         
@@ -23,7 +23,7 @@ sensor:
         friendly_name: "État de la caméra galerie arrière"
         value_template:  >
           {% if is_state('binary_sensor.blink_galerie_arriere_camera_armed', 'on') %} 
-            OK                      
+            CAOK                      
           {% else %}
             PASOK
           {% endif %}         
@@ -35,7 +35,7 @@ sensor:
         friendly_name: "État de la caméra galerie avant"
         value_template:  >
           {% if is_state('binary_sensor.blink_galerie_avant_camera_armed', 'on') %} 
-            OK                      
+            CAOK                      
           {% else %}
             PASOK
           {% endif %}         
@@ -97,7 +97,7 @@ sensor:
         friendly_name: "État de la caméra cuisine"
         value_template:  >
           {% if is_state('binary_sensor.blink_cuisine_camera_armed', 'on') %} 
-            OK                      
+            CAOK                      
           {% else %}
             PASOK
           {% endif %}         
@@ -119,7 +119,7 @@ sensor:
         friendly_name: "État de la caméra salon"
         value_template:  >
           {% if is_state('binary_sensor.blink_salon_camera_armed', 'on') %} 
-            OK                      
+            CAOK                      
           {% else %}
             PASOK
           {% endif %}         
@@ -191,7 +191,7 @@ sensor:
         friendly_name: "État de la caméra sous-sol"
         value_template:  >
           {% if is_state('binary_sensor.blink_sous_sol_camera_armed', 'on') %} 
-            OK                      
+            CAOK                      
           {% else %}
             PASOK
           {% endif %}         
