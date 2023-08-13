@@ -165,26 +165,6 @@ sensor:
 
   - platform: template
     sensors:
-     ajout_sensor_temperature_salle_de_repos:
-        unique_id: "ajout_sensor_temperature_salle_de_repos"
-        friendly_name: "Ajout Température Salle de Repos"
-        icon_template: mdi:thermometer
-        device_class: temperature
-        unit_of_measurement: "°C"
-        value_template: "{{ state_attr('climate.sensibo_salle_de_repos','current_temperature') | round(0) }}"
-        
-  - platform: template
-    sensors:
-     ajout_sensor_humidite_salle_de_repos:
-        unique_id: "ajout_sensor_humidite__salle_de_repos"
-        friendly_name: "Ajout Humidité Salle de Repos"
-        icon_template: mdi:water-percent
-        device_class: humidity
-        unit_of_measurement: "%"
-        value_template: "{{ states('sensor.sensibo_humiditee_courante_salle_de_repos') | round(0) }}"
-        
-  - platform: template
-    sensors:
      ajout_etat_thermostat_salle_repos:
         unique_id: "ajout_etat_thermostat_salle_repos"
         friendly_name: "Ajout Etat thermostat salle repos"
@@ -221,13 +201,4 @@ sensor:
         icon_template: mdi:coffee-maker
         value_template: "{{ state_attr('climate.sinope_thermostat_salle_familiale','hvac_action') }}"
         
-        
-        
-
-
-
-
-
-
-
-
+  
