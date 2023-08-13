@@ -1,0 +1,37 @@
+    type: 'custom:swiss-army-knife-card'
+    entities:
+    - entity: sensor.netatmo_sous_sol_temperature
+      decimals: '0'
+      name: 'Familiale'
+    - entity: sensor.netatmo_sous_sol_humidity
+      decimals: '0'
+    - entity: sensor.ajout_etat_thermostat_salle_familiale    
+      icon: 'mdi:radiator'
+    - entity: light.salle_familiale
+      icon: 'hue:bulb-group-ceiling-square' 
+    - entity: light.escalier_sous_sol_groupe_de_lumieres
+      icon: 'hue:ceiling-adore-flush' 
+    - entity: light.philips_lumiere_echangeur_dair    
+      icon: 'hue:bulb-br30-hung' 
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: binary_sensor.blink_sous_sol_motion_detected   
+      icon: 'mdi:motion-sensor'
+    - entity: binary_sensor.sinope_mq_detecteur_d_eau_chauffe_eau_water_leak   
+      icon: 'mdi:leak' 
+    - entity: sensor.ajout_etat_camera_sous_sol   
+      icon: 'mdi:cctv' 
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    layout:    
+      template:
+        name: sak_layout_mjt_tuile_piece
+        variables:
+          - sak_layout_mjt_tuile_piece_image: '/local/mes_images/famille.svg'
+          - sak_layout_mjt_tuile_piece_navigation: 'sous-vue-piece-salle-familiale' 
