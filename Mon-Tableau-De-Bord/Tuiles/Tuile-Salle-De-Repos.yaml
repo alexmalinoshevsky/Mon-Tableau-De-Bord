@@ -1,9 +1,9 @@
     type: 'custom:swiss-army-knife-card'
     entities:
-    - entity: sensor.ajout_sensor_temperature_salle_de_repos   
+    - entity: sensor.sensibo_temperature_courante_salle_de_repos   
       decimals: '0'
       name: 'Repos'
-    - entity: sensor.ajout_sensor_humidite_salle_de_repos   
+    - entity: sensor.sensibo_humiditee_courante_salle_de_repos
       decimals: '0'
     - entity: climate.sensibo_salle_de_repos   
       icon: 'mdi:air-conditioner'
