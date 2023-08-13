@@ -1,0 +1,48 @@
+type: "custom:button-card"
+template: tuiles-pieces
+variables:
+
+# Informations
+  var_icone: "ios:chaise#fullcolor"
+  var_nom_piece: "Repos"
+  
+# Largeur de l'icône
+  var_largeur: "50%"
+  
+# Navigation
+  var_path: "sous-vue-piece-salle-de-repos"
+  
+# Chauffage  
+  var_thermostat: "climate.sensibo_salle_de_repos"
+  var_thermostat_sensibo: true
+ 
+# Température
+  var_temperature: "sensor.ajout_sensor_temperature_salle_de_repos"
+  
+# Humidité
+  var_humidite: "sensor.ajout_sensor_humidite_salle_de_repos"
+  
+# Entitées  
+  var_ent01: "switch.salle_de_repos" 
+  var_ent01_icone: "hue:ceiling-runner-three"
+  
+# Alertes
+  var_alert01: "binary_sensor.philips_mq_detecteur_de_mouvements_occupancy"
+  var_alert01_icone_on: "mdi:motion-sensor-off"
+  var_alert01_icone_off: "mdi:motion-sensor"
+  var_alert01_etat: "on"  
+  
+  var_alert02: "binary_sensor.sinope_mq_detecteur_d_eau_lave_linges_water_leak"
+  var_alert02_icone_on: "mdi:leak-off"
+  var_alert02_icone_off: "mdi:leak"
+  var_alert02_etat: "on"  
+  
+  
+  
+     
+  
+  
+  
+  
+  
+  

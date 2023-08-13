@@ -1,0 +1,47 @@
+    type: 'custom:swiss-army-knife-card'
+    entities:
+    - entity: sensor.capteur_atelier_temperature
+      decimals: '0'
+      name: 'Atelier'
+    - entity: sensor.capteur_atelier_humidity
+      decimals: '0'
+    - entity: sensor.ajout_etat_thermostat_atelier   
+      icon: 'mdi:radiator'
+    - entity: light.sinope_lumieres_atelier
+      icon: 'hue:amaze' 
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp  
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    layout:
+      template:
+        name: sak_layout_mjt_tuile_piece
+        variables: 
+          - sak_layout_mjt_tuile_piece_image: '/local/mes_images/outils.svg'
+          - sak_layout_mjt_tuile_piece_navigation: 'sous-vue-piece-atelier'
+ 
+          
+          
+ 
+   
+          
+          
+          
+          
+          

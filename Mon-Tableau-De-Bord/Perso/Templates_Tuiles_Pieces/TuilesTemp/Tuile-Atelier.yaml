@@ -1,0 +1,35 @@
+type: "custom:button-card"
+template: tuiles-pieces
+variables:
+
+# Informations
+  var_icone: "ios:outils#fullcolor"
+  var_nom_piece: "Atelier"
+  
+# Largeur de l'icône
+  var_largeur: "50%"
+  
+# Navigation
+  var_path: "sous-vue-piece-atelier"
+  
+# Chauffage  
+  var_thermostat: "sensor.ajout_etat_thermostat_atelier"
+  var_thermostat_sinope: true
+ 
+# Température
+  var_temperature: "sensor.ajout_sensor_temperature_atelier"
+  
+# Humidité
+  var_humidite: "sensor.ajout_sensor_humidite_atelier"
+  
+# Entitées  
+  var_ent01: "light.sinope_lumieres_atelier"
+  var_ent01_icone: "hue:amaze"
+  
+     
+  
+  
+  
+  
+  
+  

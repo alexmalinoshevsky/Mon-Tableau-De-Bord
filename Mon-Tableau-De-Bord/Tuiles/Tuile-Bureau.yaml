@@ -1,0 +1,39 @@
+    type: 'custom:swiss-army-knife-card'
+    entities:
+    - entity: sensor.netatmo_bureau_temperature    
+      decimals: '0'
+      name: 'Bureau'
+    - entity: sensor.netatmo_bureau_humidity
+      decimals: '0'
+    - entity: sensor.ajout_etat_thermostat_bureau   
+      icon: 'mdi:radiator'
+    - entity: light.sinope_lumieres_bureau   
+      icon: 'hue:ceiling-fugato-two-alt' 
+    - entity: light.neviweb130_light_light_garde_robe_bureau    
+      icon: 'hue:ceiling-beyond-alt' 
+    - entity: switch.sinope_prise_ordinateur    
+      icon: 'hue:socket-us' 
+    - entity: vacuum.roomba_2   
+      icon: 'mdi:robot-vacuum' 
+    - entity: sensor.canon_pro_100_series   
+      icon: 'mdi:printer'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: alarm_control_panel.blink_cameras_interieures   
+      icon: 'mdi:shield-home-outline' 
+    - entity: alarm_control_panel.blink_cameras_exterieures   
+      icon: 'mdi:shield-home-outline' 
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    layout:
+      template:
+        name: sak_layout_mjt_tuile_piece
+        variables:
+          - sak_layout_mjt_tuile_piece_image: '/local/mes_images/bureau.svg'
+          - sak_layout_mjt_tuile_piece_navigation: 'sous-vue-piece-bureau' 
+          
+ 

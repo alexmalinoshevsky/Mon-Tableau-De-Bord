@@ -1,0 +1,56 @@
+theme: MonTableau
+title: Test
+path: vue-page-tests
+icon: mdi:test-tube
+type: panel
+badges: []
+cards:
+
+  - type: 'custom:swiss-army-knife-card'
+    entities:
+    - entity: 'sensor.ajout_sensor_temperature_salon'
+      decimals: '0'
+      name: 'Extérieure'
+    - entity: 'sensor.ajout_sensor_humidite_salon'
+      decimals: '0'
+    - entity: light.salon
+      icon: 'mdi:lamps'
+    - entity: light.escalier_sous_sol_groupe_de_lumieres
+      icon: 'hue:bulb-group-ceiling-square'
+    - entity: input_boolean.temp
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp
+      icon: 'mdi:sans'
+    layout:
+      template:
+        name: sak_layout_mjt_tuile_piece
+        variables:
+          - sak_layout_mjt_tuile_piece_image: 'arbre.svg'
+                
+
+ 
+                
+                
+                
+                
+                
+
+                
+                
+                

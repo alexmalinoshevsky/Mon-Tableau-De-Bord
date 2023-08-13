@@ -1,0 +1,59 @@
+type: "custom:button-card"
+template: tuiles-pieces
+variables:
+
+# Informations
+  var_icone: "ios:cuisiniere#fullcolor"
+  var_nom_piece: "Cuisine"
+
+# Largeur de l'icône
+  var_largeur: "35%"
+  
+# Navigation
+  var_path: "sous-vue-piece-cuisine"
+  
+# Chauffage  
+  var_thermostat: "sensor.ajout_etat_thermostat_cuisine"
+  var_thermostat_sinope: true
+ 
+# Température
+  var_temperature: "sensor.ajout_sensor_temperature_cuisine"
+  
+# Humidité
+  var_humidite: "sensor.ajout_sensor_humidite_cuisine"
+  
+# Entitées  
+  var_ent01: "light.neviweb130_light_dimmer_comptoir_cuisine"
+  var_ent01_icone: "hue:ceiling-buratto-two"          
+  
+  var_ent02: "light.neviweb130_light_light_huche_cuisine"
+  var_ent02_icone: "hue:ceiling-runner"
+  
+  var_ent03: "light.neviweb130_light_light_garde_robe_1re"    
+  var_ent03_icone: "hue:ceiling-beyond-alt"
+  
+  var_ent04: "light.sinope_lumieres_vestibule_arriere"  
+  var_ent04_icone: "hue:ceiling-buckram-three"
+   
+  var_ent05: "switch.sinope_prise_ipad_ha"  
+  var_ent05_icone: "hue:socket-us"
+  
+# Alertes
+  var_alert01: "binary_sensor.blink_cuisine_motion_detected"
+  var_alert01_icone_on: "mdi:motion-sensor-off"
+  var_alert01_icone_off: "mdi:motion-sensor"
+  var_alert01_etat: "on"  
+  
+  var_alert02: "binary_sensor.sinope_mq_detecteur_d_eau_lave_vaisselles_water_leak"
+  var_alert02_icone_on: "mdi:leak-off"
+  var_alert02_icone_off: "mdi:leak"
+  var_alert02_etat: "on"  
+  
+  var_alert03: "binary_sensor.blink_cuisine_camera_armed"
+  var_alert03_icone_on: "mdi:cctv"
+  var_alert03_icone_off: "mdi:cctv-off"
+  var_alert03_etat: "off"  
+
+  
+ 
+  
