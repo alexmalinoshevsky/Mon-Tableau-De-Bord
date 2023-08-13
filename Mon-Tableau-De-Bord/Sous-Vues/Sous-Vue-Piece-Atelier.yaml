@@ -1,4 +1,4 @@
-# Sous Vue Chambre des Maîtres
+# Sous Vue Atelier
 
 theme: MonTableau
 title: Atelier
@@ -44,7 +44,7 @@ cards:
                 entity: climate.sinope_thermostat_atelier
                 icon: mdi:thermostat-box
                 name: Souhaitable
-              - entity: sensor.ajout_sensor_humidite_atelier
+              - entity: sensor.capteur_atelier_humidity
                 unit: "%"
               - attribute: hourly_kwh
                 decimals: 1
@@ -84,7 +84,7 @@ cards:
             cards:
               - type: "custom:swiss-army-knife-card"
                 entities:
-                  - entity: sensor.ajout_sensor_temperature_atelier
+                  - entity: sensor.capteur_atelier_temperature
                     decimals: 0
                 layout:
                   template:
@@ -97,7 +97,7 @@ cards:
 
               - type: "custom:swiss-army-knife-card"
                 entities:
-                  - entity: sensor.ajout_sensor_humidite_atelier
+                  - entity: sensor.capteur_atelier_humidity
                     decimals: 0
                 layout:
                   template:
