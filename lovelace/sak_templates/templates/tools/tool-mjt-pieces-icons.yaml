@@ -45,15 +45,15 @@ tool_mjt_pieces_icons:
       - state: 'OK'
         styles:
           icon:
+            fill: var(--nova-gradient-color-03) # Vert
+      - state: 'CAOK'
+        styles:
+          icon:
             fill: var(--nova-gradient-color-06)  # Jaune
       - state: 'playing'
         styles:
           icon:
             fill: var(--nova-gradient-color-06)  # Jaune
-      - state: 'normal'
-        styles:
-          icon:
-            fill: var(--nova-gradient-color-03) # Vert
       - state: 'locked'
         styles:
           icon:
