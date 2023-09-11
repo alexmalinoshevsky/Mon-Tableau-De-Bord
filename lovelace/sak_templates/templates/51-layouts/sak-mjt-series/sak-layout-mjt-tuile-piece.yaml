@@ -1,0 +1,264 @@
+sak_layout_mjt_tuile_piece:
+  template:
+    type: layout
+    defaults: 
+      - sak_layout_mjt_tuile_piece_image: ""
+      - sak_layout_mjt_tuile_piece_navigation: ""
+  layout:
+    aspectratio: '1/1.45'      
+    styles:
+      card:
+    toolsets:
+      - toolset: carte-tuile-piece
+        position:
+          cx: 0
+          cy: 0
+        tools:
+#----------------------------------------------------------------
+          - type: rectex
+            position:
+              cx: 100
+              cy: 122.5
+              width: 98
+              height: 142
+              radius:
+                top_left: 0
+                top_right: 0
+                bottom_right: 0
+                bottom_left: 0
+            styles:
+              rectex:
+                stroke: grey # var(--primary-background-color)
+                fill: grey #  var(--primary-background-color)
+                opacity: 0.1
+                filter: 'url(#nm-11)'
+#----------------------------------------------------------------
+          - type: 'circle'
+            id: 0
+            position:
+              cx: 100
+              cy: 80
+              radius: 23
+            styles:
+              circle:
+                opacity: 1
+                fill: teal
+#----------------------------------------------------------------
+          - type: 'usersvg'           
+            entity_index: 0
+            position:                
+                cx: 100
+                cy: 80
+                height: 47
+                width: 47
+            style: 'images'
+            images:             
+              - default: '[[sak_layout_mjt_tuile_piece_image]]'
+#----------------------------------------------------------------
+          - type: 'usersvg'           
+            position:                
+                cx: 65
+                cy: 129.5       
+                height: 12  
+                width: 12
+            style: 'images'
+            images:             
+                - default: /local/mes_images/temperature.png
+#----------------------------------------------------------------
+          - type: 'usersvg'           
+            position:                
+                cx: 119
+                cy: 129.5   
+                height: 12
+                width: 12
+            style: 'images'
+            images:             
+                - default: /local/mes_images/humidite.png
+#----------------------------------------------------------------
+          - type: state
+            position:
+              cx: 70
+              cy: 129.5   
+            entity_index: 0
+            styles:
+              state:
+                text-anchor: start
+                font-size: 10em
+                font-weight: 500
+#----------------------------------------------------------------
+          - type: state
+            position:
+              cx: 125
+              cy: 129.5   
+            entity_index: 1
+            styles:
+              state:
+                text-anchor: start
+                font-size: 10em
+                font-weight: 500
+#----------------------------------------------------------------
+          - type: rectex
+            position:
+              cx: 100
+              cy: 164
+              width: 87
+              height: 53
+              radius:
+                top_left: 5
+                top_right: 5
+                bottom_right: 5
+                bottom_left: 5
+            styles:
+              rectex:
+                stroke: teal
+                fill: teal
+                opacity: 1
+                # stroke-width: 4  
+#----------------------------------------------------------------
+          - type: rectex
+            position:
+              cx: 100.3
+              cy: 164.3
+              width: 90
+              height: 55
+              radius:
+                top_left: 5
+                top_right: 5
+                bottom_right: 5
+                bottom_left: 5
+            styles:
+              rectex:
+                stroke: var(--primary-background-color) 
+                fill: var(--primary-background-color)
+                opacity: 0.75
+                stroke-width: 4  
+#----------------------------------------------------------------
+          - type: line
+            position:
+              cx: 100
+              cy: 122
+              length: 90
+              orientation: horizontal
+            styles:
+              line:
+                # stroke: gray
+                stroke-opacity: 1
+                stroke-width: 4
+#----------------------------------------------------------------
+          - type: name
+            position:
+              cx: 100
+              cy: 113
+            entity_index: 0
+            styles:
+              name:
+                text-anchor: center
+                font-size: 12em
+                font-weight: 600
+#----------------------------------------------------------------
+          - template:
+              name: tool_mjt_pieces_icons
+              variables:
+                - sak_tool_mjt_pieces_icons_index: 2
+                - sak_tool_mjt_pieces_icons_cx: 70
+                - sak_tool_mjt_pieces_icons_cy: 147
+#----------------------------------------------------------------
+          - template:
+              name: tool_mjt_pieces_icons
+              variables:
+                - sak_tool_mjt_pieces_icons_index: 3
+                - sak_tool_mjt_pieces_icons_cx: 90
+                - sak_tool_mjt_pieces_icons_cy: 147    
+#----------------------------------------------------------------
+          - template:
+              name: tool_mjt_pieces_icons
+              variables:
+                - sak_tool_mjt_pieces_icons_index: 4
+                - sak_tool_mjt_pieces_icons_cx: 110
+                - sak_tool_mjt_pieces_icons_cy: 147    
+#----------------------------------------------------------------
+          - template:
+              name: tool_mjt_pieces_icons
+              variables:
+                - sak_tool_mjt_pieces_icons_index: 5
+                - sak_tool_mjt_pieces_icons_cx: 130
+                - sak_tool_mjt_pieces_icons_cy: 147    
+#----------------------------------------------------------------
+          - template:
+              name: tool_mjt_pieces_icons
+              variables:
+                - sak_tool_mjt_pieces_icons_index: 6
+                - sak_tool_mjt_pieces_icons_cx: 70
+                - sak_tool_mjt_pieces_icons_cy: 164  
+#----------------------------------------------------------------
+          - template:
+              name: tool_mjt_pieces_icons
+              variables:
+                - sak_tool_mjt_pieces_icons_index: 7
+                - sak_tool_mjt_pieces_icons_cx: 90
+                - sak_tool_mjt_pieces_icons_cy: 164  
+#----------------------------------------------------------------
+          - template:
+              name: tool_mjt_pieces_icons
+              variables:
+                - sak_tool_mjt_pieces_icons_index: 8
+                - sak_tool_mjt_pieces_icons_cx: 110
+                - sak_tool_mjt_pieces_icons_cy: 164  
+#----------------------------------------------------------------
+          - template:
+              name: tool_mjt_pieces_icons
+              variables:
+                - sak_tool_mjt_pieces_icons_index: 9
+                - sak_tool_mjt_pieces_icons_cx: 130
+                - sak_tool_mjt_pieces_icons_cy: 164  
+#----------------------------------------------------------------
+          - template:
+              name: tool_mjt_pieces_icons
+              variables:
+                - sak_tool_mjt_pieces_icons_index: 10
+                - sak_tool_mjt_pieces_icons_cx: 70
+                - sak_tool_mjt_pieces_icons_cy: 181
+#----------------------------------------------------------------
+          - template:
+              name: tool_mjt_pieces_icons
+              variables:
+                - sak_tool_mjt_pieces_icons_index: 11
+                - sak_tool_mjt_pieces_icons_cx: 90
+                - sak_tool_mjt_pieces_icons_cy: 181
+#----------------------------------------------------------------
+          - template:
+              name: tool_mjt_pieces_icons
+              variables:
+                - sak_tool_mjt_pieces_icons_index: 12
+                - sak_tool_mjt_pieces_icons_cx: 110
+                - sak_tool_mjt_pieces_icons_cy: 181
+#----------------------------------------------------------------
+          - template:
+              name: tool_mjt_pieces_icons
+              variables:
+                - sak_tool_mjt_pieces_icons_index: 13
+                - sak_tool_mjt_pieces_icons_cx: 130
+                - sak_tool_mjt_pieces_icons_cy: 181
+#----------------------------------------------------------------
+          - type: rectex
+            position:
+              cx: 100
+              cy: 122
+              width: 98
+              height: 142
+              radius:
+                top_left: 0
+                top_right: 0
+                bottom_right: 0
+                bottom_left: 0
+            styles:
+              rectex:
+                stroke: var(--primary-background-color)
+                opacity: 0
+            user_actions:
+              tap_action:
+                haptic: success
+                actions:
+                  - action: navigate
+                    navigation_path: '[[sak_layout_mjt_tuile_piece_navigation]]'
+                    

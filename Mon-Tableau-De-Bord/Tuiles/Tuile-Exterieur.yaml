@@ -1,0 +1,37 @@
+    type: 'custom:swiss-army-knife-card'
+    entities:
+    - entity: sensor.tempest_st_00032986_temperature
+      decimals: '0'
+      name: 'Extérieur'
+    - entity: sensor.tempest_st_00032986_humidity
+      decimals: '0'
+    - entity: light.galerie_avant_groupe_de_lumieres    
+      icon: 'mdi:coach-lamp' 
+    - entity: light.sinope_lumieres_galerie_arriere
+      icon: 'hue:ceiling-fugato-two-alt' 
+    - entity: light.lampadaire_groupe_de_lumieres
+      icon: 'mdi:floor-lamp-torchiere-outline' 
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: binary_sensor.blink_galerie_avant_motion_detected   
+      icon: 'mdi:motion-sensor'
+    - entity: binary_sensor.blink_galerie_arriere_motion_detected  
+      icon: 'mdi:motion-sensor'
+    - entity: binary_sensor.blink_allee_motion_detected  
+      icon: 'mdi:motion-sensor'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: sensor.ajout_etat_camera_galerie_avant 
+      icon: 'mdi:cctv' 
+    - entity: sensor.ajout_etat_camera_galerie_arriere
+      icon: 'mdi:cctv' 
+    - entity: sensor.ajout_etat_camera_allee
+      icon: 'mdi:cctv' 
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    layout:
+      template:
+        name: sak_layout_mjt_tuile_piece
+        variables:
+          - sak_layout_mjt_tuile_piece_image: '/local/mes_images/arbre.svg'
+          - sak_layout_mjt_tuile_piece_navigation: 'sous-vue-piece-exterieur'

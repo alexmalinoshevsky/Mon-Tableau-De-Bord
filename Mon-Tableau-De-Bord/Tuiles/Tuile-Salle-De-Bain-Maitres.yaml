@@ -1,0 +1,39 @@
+    type: 'custom:swiss-army-knife-card'
+    entities:
+    - entity: sensor.ajout_sensor_temperature_salle_de_bain_maitres    
+      decimals: '0'
+      name: 'Bain'
+    - entity: sensor.ajout_sensor_humidite_salle_de_bain_maitres    
+      decimals: '0'
+    - entity: sensor.ajout_etat_thermostat_salle_de_bain_maitres    
+      icon: 'mdi:radiator'
+    - entity: light.salle_de_bain    
+      icon: 'hue:amaze' 
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: binary_sensor.sinope_mq_detecteur_d_eau_salle_de_bain_maitres_water_leak   
+      icon: 'mdi:leak' 
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    layout:
+      template:
+        name: sak_layout_mjt_tuile_piece
+        variables:
+          - sak_layout_mjt_tuile_piece_image: '/local/mes_images/bain.svg'
+          - sak_layout_mjt_tuile_piece_navigation: 'sous-vue-piece-salle-bain-maitres'
+          
+  

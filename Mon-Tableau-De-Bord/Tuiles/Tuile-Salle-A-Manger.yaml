@@ -1,0 +1,45 @@
+    type: 'custom:swiss-army-knife-card'
+    entities:
+    - entity: sensor.capteur_salle_a_manger_temperature   
+      decimals: '0'
+      name: 'Dîner'
+    - entity: sensor.capteur_salle_a_manger_humidity   
+      decimals: '0'
+    - entity: climate.sensibo_cuisine    
+      icon: 'mdi:air-conditioner'
+    - entity: light.brilliant_salle_a_manger_table    
+      icon: 'hue:pendant-long' 
+    - entity: light.brilliant_salle_a_manger_vestibule_avant   
+      icon: 'hue:ceiling-fugato-two-alt' 
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: plant.lis_de_la_paix   
+      icon: 'mdi:flower' 
+    - entity: lock.porte_d_entree   
+      icon: 'mdi:lock' 
+    - entity: binary_sensor.porte_d_entree_open   
+      icon: 'mdi:door-closed' 
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    layout:
+      template:
+        name: sak_layout_mjt_tuile_piece    
+        variables:
+          - sak_layout_mjt_tuile_piece_image: '/local/mes_images/nouriture-dinde.svg'
+          - sak_layout_mjt_tuile_piece_navigation: 'sous-vue-piece-salle-a-manger'
+
+          
+          
+          
+          
+          
+          
+          

@@ -1,0 +1,40 @@
+theme: MonTableau
+title: Test
+path: vue-page-tests
+icon: mdi:test-tube
+type: panel
+badges: []
+cards:
+
+ - type: custom:swiss-army-knife-card
+   aspectratio: 1/1
+   entities:
+     - entity: sensor.blink_salon_temperature
+       name: sala
+   layout:
+    toolsets:
+    - toolset: just-a-name
+      position:
+        cx: 50
+        cy: 50
+      tools:
+        - type: circle
+          position:
+            cx: 50
+            cy: 50
+            radius: 45
+          styles:
+            circle:
+              stroke-width: 2em
+              stroke: red
+              stroke-opacity: 0.5
+              fill: bisque
+              fill-opacity: 0.5
+        - type: state
+          position:
+            cx: 50
+            cy: 70
+          entity_index: 0
+          styles:
+            state:
+              font-size: 15em

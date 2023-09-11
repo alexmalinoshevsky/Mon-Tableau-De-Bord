@@ -1,0 +1,167 @@
+theme: MonTableau
+title: Test
+path: vue-page-tests
+icon: mdi:test-tube
+type: panel
+badges: []
+cards:
+
+ - type: custom:swiss-army-knife-card
+   entities:
+     - entity: sensor.blink_salon_temperature
+       name: thermostat
+       decimals: 1
+       unit: °C
+     - entity: sensor.netatmo_salon_temperature
+       name: setpoint
+       unit: °C
+   layout: 
+     toolsets:
+       - toolset: thermostat
+         position:
+           cx: 50
+           cy: 50
+         tools:
+         
+####### ARC TEMPERATUR #########
+           - type: segarc
+             entity_index: 0
+             position:
+               cx: 50
+               cy: 50
+               start_angle: -120
+               end_angle: 120
+               width: 4
+               radius: 37.9
+             scale:
+               min: 0
+               max: 35
+             show:
+               scale: false
+               style: colorlist
+             segments:
+               colorlist:
+                 gap: -0.5
+                 colors:
+                   - white
+             animation:
+               duration: 5
+             styles:
+               background:
+                 fill: '#263C50'
+                 
+####### ARC SETPOINT #########                 
+           - type: segarc
+             id: 0
+             entity_index: 1
+             position:
+               cx: 50
+               cy: 50
+               start_angle: -120
+               end_angle: 120.3
+               width: 5
+               radius: 34
+             scale:
+               min: 0
+               max: 35
+               width: 2
+               offset: 2.2
+             show:
+               scale: true
+               style: colorstops
+             segments:
+               colorstops:
+                 gap: -0.5
+                 colors:
+                   '0': '#4390E0'
+                   '5': '#4B90C9'
+                   '8': '#598FB5'
+                   '11': '#688FA0'
+                   '14': '#798F8C'
+                   '17': '#8B8F76'
+                   '20': '#9F8E62'
+                   '23': '#B28E50'
+                   '26': '#C48F42'
+                   '29': '#D99039'
+                   '32': '#D6882B'   
+             animation:
+               duration: 5
+             styles:
+               background:
+                 fill: '#263C50'
+                 
+####### LINE SEPARATOR #########                
+           - type: line
+             position:
+               cx: 50
+               cy: 55
+               length: 33
+               orientation: horizontal
+             styles:
+               line:
+                 stroke: white
+                 stroke-width: 3
+
+####### VIEW STATE TEMPERATUR #########                 
+           - type: state
+             position:
+               cx: 50
+               cy: 49
+             entity_index: 0
+             styles:
+               state:
+                 text-anchor: middle
+                 font-family: Days One
+                 font-size: 15em
+                 fill: white
+                 text-shadow: 2px 2px 2px black
+               uom:
+                 font-family: Days One
+                 fill: white
+                 text-shadow: 2px 2px 2px black
+
+####### TEXT 'ROOM' #########                 
+           - type: text
+             position:
+               cx: 50
+               cy: 33
+             text: Room
+             styles:
+               text:
+                 text-anchor: middle
+                 font-family: Days One
+                 fill: white
+                 text-shadow: 2px 2px 2px black
+                 font-size: 7em
+                 
+####### TEMPERATUR SETPOINT #########
+           - type: state
+             position:
+               cx: 50
+               cy: 64.5
+             entity_index: 1
+             styles:
+               state:
+                 text-anchor: start
+                 font-family: Days One
+                 font-size: 7em
+                 fill: white
+                 text-shadow: 2px 2px 2px black
+               uom:
+                 font-family: Days One
+                 fill: white
+                 text-shadow: 2px 2px 2px black
+                 
+####### TEXT 'SET' #########
+           - type: text
+             position:
+               cx: 48
+               cy: 63
+             text: Set
+             styles:
+               text:
+                 text-anchor: end
+                 font-family: Days One
+                 fill: white
+                 text-shadow: 2px 2px 2px black
+                 font-size: 4.5em

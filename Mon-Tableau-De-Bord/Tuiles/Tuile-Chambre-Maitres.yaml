@@ -1,0 +1,40 @@
+    type: 'custom:swiss-army-knife-card'
+    entities:
+    - entity: sensor.netatmo_chambre_maitres_temperature    
+      decimals: '0'
+      name: 'Maîtres'
+    - entity: sensor.netatmo_chambre_maitres_humidity   
+      decimals: '0'
+    - entity: sensor.ajout_etat_thermostat_chambre_maitres    
+      icon: 'mdi:radiator'
+    - entity: light.brilliant_chambre_plafond_chambre_maitres_light   
+      icon: 'hue:phoenix-semiflush' 
+    - entity: light.chambre_des_maitre_lampe_de_chevets    
+      icon: 'mdi:lamp' 
+    - entity: switch.sinope_prise_lampes_chevets     
+      icon: 'hue:socket-us' 
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp     
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp     
+      icon: 'mdi:motion-sensor'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    layout:
+      template:
+        name: sak_layout_mjt_tuile_piece
+        variables:
+          - sak_layout_mjt_tuile_piece_image: '/local/mes_images/lit-principale.svg'
+          - sak_layout_mjt_tuile_piece_navigation: 'sous-vue-piece-chambre-maitres'
+          
+          
+           

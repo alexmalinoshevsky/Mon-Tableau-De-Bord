@@ -1,0 +1,49 @@
+    type: 'custom:swiss-army-knife-card'
+    entities:
+    - entity: sensor.capteur_chambre_invites_temperature    
+      decimals: '0'
+      name: 'Invités'
+    - entity: sensor.capteur_chambre_invites_humidity
+      decimals: '0'
+    - entity: sensor.ajout_etat_thermostat_chambre_invites   
+      icon: 'mdi:radiator'
+    - entity: light.sinope_interrupteur_chambre_invites
+      icon: 'hue:ceiling-fugato-three-alt' 
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp  
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    layout:
+      template:
+        name: sak_layout_mjt_tuile_piece
+        variables: 
+          - sak_layout_mjt_tuile_piece_image: '/local/mes_images/lit-invites.svg'
+          - sak_layout_mjt_tuile_piece_navigation: 'sous-vue-piece-chambre-invites'
+          
+ 
+ 
+          
+          
+ 
+   
+          
+          
+          
+          
+          

@@ -1,0 +1,37 @@
+    type: 'custom:swiss-army-knife-card'
+    entities:
+    - entity: sensor.sensibo_temperature_courante_cuisine
+      decimals: '0'
+      name: 'Cuisine'
+    - entity: sensor.sensibo_humiditee_courante_cuisine   
+      decimals: '0'
+    - entity: sensor.ajout_etat_thermostat_cuisine    
+      icon: 'mdi:radiator'
+    - entity: light.neviweb130_light_dimmer_comptoir_cuisine    
+      icon: 'hue:ceiling-buratto-two' 
+    - entity: switch.interrupteur_huche_cuisine   
+      icon: 'hue:ceiling-runner'
+    - entity: switch.interrupteur_garde_robes_cuisine    
+      icon: 'hue:ceiling-beyond-alt' 
+    - entity: light.sinope_lumieres_vestibule_arriere   
+      icon: 'hue:ceiling-buckram-three' 
+    - entity: switch.sinope_prise_ipad_ha     
+      icon: 'hue:socket-us' 
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: binary_sensor.blink_cuisine_motion_detected   
+      icon: 'mdi:motion-sensor'
+    - entity: binary_sensor.sinope_mq_detecteur_d_eau_lave_vaisselles_water_leak    
+      icon: 'mdi:leak' 
+    - entity: sensor.ajout_etat_camera_cuisine   
+      icon: 'mdi:cctv' 
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    layout:
+      template:
+        name: sak_layout_mjt_tuile_piece
+        variables:
+          - sak_layout_mjt_tuile_piece_image: '/local/mes_images/cuisiniere.svg'
+          - sak_layout_mjt_tuile_piece_navigation: 'sous-vue-piece-cuisine'
