@@ -1,0 +1,114 @@
+type: custom:vertical-stack-in-card
+card_mod:
+    style: |
+     ha-card {
+      box-shadow: 0 0 0 2px gray;
+     }
+cards:
+  - type: picture-elements
+    image: /local/mes_images/lune.png
+    elements:
+      - type: conditional
+        conditions:
+          - entity: sensor.moon
+            state: new_moon
+        elements:
+          - type: image
+            image: /local/mes_images/circle.png
+            style:
+              top: 48%
+              left: 48%
+              width: 8%
+              border: 2px solid yellow
+              border-radius: 50%
+      - type: conditional
+        conditions:
+          - entity: sensor.moon
+            state: waxing_crescent
+        elements:
+          - type: image
+            image: /local/mes_images/circle.png
+            style:
+              top: 29%
+              left: 40.2%
+              width: 8%
+              border: 2px solid yellow
+              border-radius: 50%
+      - type: conditional
+        conditions:
+          - entity: sensor.moon
+            state: first_quarter
+        elements:
+          - type: image
+            image: /local/mes_images/circle.png
+            style:
+              top: 21%
+              left: 32%
+              width: 8%
+              border: 2px solid yellow
+              border-radius: 50%
+      - type: conditional
+        conditions:
+          - entity: sensor.moon
+            state: waxing_gibbous
+        elements:
+          - type: image
+            image: /local/mes_images/circle.png
+            style:
+              top: 29%
+              left: 22.5%
+              width: 8%
+              border: 2px solid yellow
+              border-radius: 50%
+      - type: conditional
+        conditions:
+          - entity: sensor.moon
+            state: full_moon
+        elements:
+          - type: image
+            image: /local/mes_images/circle.png
+            style:
+              top: 46%
+              left: 16.3%
+              width: 8%
+              border: 2px solid yellow
+              border-radius: 50%
+      - type: conditional
+        conditions:
+          - entity: sensor.moon
+            state: waning_gibbous
+        elements:
+          - type: image
+            image: /local/mes_images/circle.png
+            style:
+              top: 68%
+              left: 22%
+              width: 8%
+              border: 2px solid yellow
+              border-radius: 50%
+      - type: conditional
+        conditions:
+          - entity: sensor.moon
+            state: last_quarter
+        elements:
+          - type: image
+            image: /local/mes_images/circle.png
+            style:
+              top: 79%
+              left: 32%
+              width: 8%
+              border: 2px solid yellow
+              border-radius: 50%
+      - type: conditional
+        conditions:
+          - entity: sensor.moon
+            state: waning_crescent
+        elements:
+          - type: image
+            image: /local/mes_images/circle.png
+            style:
+              top: 68%
+              left: 40%
+              width: 8%
+              border: 2px solid yellow
+              border-radius: 50%

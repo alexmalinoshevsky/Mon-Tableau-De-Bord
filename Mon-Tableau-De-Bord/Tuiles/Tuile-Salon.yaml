@@ -1,0 +1,44 @@
+    type: 'custom:swiss-army-knife-card'
+    entities:
+    - entity: sensor.netatmo_salon_temperature    
+      decimals: 0
+      name: 'Salon'
+    - entity: sensor.netatmo_salon_humidity    
+      decimals: 0
+    - entity: sensor.ajout_etat_thermostat_salon    
+      icon: 'mdi:radiator'
+    - entity: light.salon    
+      icon: 'mdi:lamps'
+    - entity: light.govee_t2_salon    
+      icon: 'mdi:television-ambient-light' 
+    - entity: light.lecture    
+      icon: 'mdi:desk-lamp'
+    - entity: light.brilliant_salon_huche_du_salon    
+      icon: 'mdi:light-recessed'
+    - entity: media_player.televiseur_du_salon    
+      icon: 'mdi:television'
+    - entity: media_player.salon   
+      icon: 'mdi:apple' 
+    - entity: media_player.spotify_michel    
+      icon: 'mdi:spotify' 
+    - entity: switch.neviweb130_switch_huche_salon    
+      icon: 'hue:socket-us' 
+    - entity: switch.neviweb130_switch_lampes_du_salon   
+      icon: 'hue:socket-us' 
+    - entity: binary_sensor.blink_salon_motion_detected   
+      icon: 'mdi:motion-sensor'
+    - entity: sensor.ajout_etat_camera_salon   
+      icon: 'mdi:cctv' 
+    layout:
+      template:
+        name: sak_layout_mjt_tuile_piece
+        variables:
+          - sak_layout_mjt_tuile_piece_image: '/local/mes_images/sofa.svg'
+          - sak_layout_mjt_tuile_piece_navigation: 'sous-vue-piece-salon'
+          
+          
+          
+          
+          
+          
+          

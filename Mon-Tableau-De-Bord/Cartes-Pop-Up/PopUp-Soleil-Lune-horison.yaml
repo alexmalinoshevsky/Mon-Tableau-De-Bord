@@ -1,0 +1,32 @@
+# Soleil et lune horizon
+type: custom:vertical-stack-in-card
+card_mod:
+    style: |
+     ha-card {
+      box-shadow: 0 0 0 2px gray;
+     }
+cards:
+  - type: custom:horizon-card
+    title: Soleil - Lune
+    moon: true
+    refresh_period: 60
+    fields:
+      sunrise: true
+      sunset: true
+      dawn: true
+      noon: true
+      dusk: true
+      azimuth: true
+      sun_azimuth: true
+      moon_azimuth: true
+      elevation: true
+      sun_elevation: true
+      moon_elevation: true
+      moonrise: true
+      moonset: true
+      moon_phase: true
+    southern_flip: false
+    moon_phase_rotation: -10
+    language: fr
+    time_format: language
+    number_format: language

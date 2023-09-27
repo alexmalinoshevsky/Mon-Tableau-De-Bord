@@ -1,0 +1,46 @@
+    type: 'custom:swiss-army-knife-card'
+    entities:
+    - entity: sensor.sensibo_temperature_courante_salle_de_repos   
+      decimals: '0'
+      name: 'Repos'
+    - entity: sensor.sensibo_humiditee_courante_salle_de_repos
+      decimals: '0'
+    - entity: climate.sensibo_salle_de_repos   
+      icon: 'mdi:air-conditioner'
+    - entity: sensor.ajout_etat_thermostat_salle_repos   
+      icon: 'mdi:radiator'
+    - entity: switch.salle_de_repos   
+      icon: 'hue:ceiling-runner-three' 
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp  
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: binary_sensor.philips_mq_detecteur_de_mouvements_occupancy   
+      icon: 'mdi:motion-sensor'
+    - entity: binary_sensor.sinope_mq_detecteur_d_eau_lave_linges_water_leak   
+      icon: 'mdi:leak' 
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    layout:
+      template:
+        name: sak_layout_mjt_tuile_piece
+        variables: 
+          - sak_layout_mjt_tuile_piece_image: '/local/mes_images/chaise.svg'
+          - sak_layout_mjt_tuile_piece_navigation: 'sous-vue-piece-salle-de-repos'
+          
+          
+ 
+   
+          
+          
+          
+          
+          

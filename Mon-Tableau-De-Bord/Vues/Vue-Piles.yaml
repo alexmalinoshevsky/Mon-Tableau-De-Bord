@@ -1,0 +1,165 @@
+# Vue Piles
+
+theme: MonTableau
+title: Piles
+path: vue-page-piles
+icon: ios:pile#fullcolor
+type: panel
+badges: []
+
+cards:
+  - type: vertical-stack
+    cards:
+      - type: custom:swiss-army-knife-card
+        disable_card: true
+        layout:
+          template:
+            name: sak_layout_mjt_barre_pieces
+            variables:
+              - sak_layout_mjt_barre_pieces_titre: "Piles"
+              - sak_layout_mjt_barre_pieces_image: "/local/mes_images/pile.svg"
+
+      - type: custom:auto-entities
+        card:
+          type: custom:bar-card
+          title_position: inside
+          height: 38
+          card_mod: null
+          positions:
+            icon: inside
+            indicator: inside
+            name: inside
+            value: inside
+          show_icon: true
+          align: split
+          columns: "2"
+          max: 100
+          unit_of_measurement: "%"
+          severity:
+            - color: "#d11e1e"
+              from: 0
+              to: 5
+              icon: mdi:battery-outline
+            - color: "#cf2d11"
+              from: 6
+              to: 10
+              icon: mdi:battery-10
+            - color: "#cc3900"
+              from: 11
+              to: 15
+              icon: mdi:battery-10
+            - color: "#c84400"
+              from: 16
+              to: 20
+              icon: mdi:battery-20
+            - color: "#c44d00"
+              from: 21
+              to: 25
+              icon: mdi:battery-20
+            - color: "#bf5600"
+              from: 26
+              to: 30
+              icon: mdi:battery-30
+            - color: "#b95f00"
+              from: 31
+              to: 35
+              icon: mdi:battery-30
+            - color: "#b36600"
+              from: 36
+              to: 40
+              icon: mdi:battery-40
+            - color: "#ac6e00"
+              from: 41
+              to: 45
+              icon: mdi:battery-40
+            - color: "#a57500"
+              from: 46
+              to: 50
+              icon: mdi:battery-50
+            - color: "#9d7b00"
+              from: 51
+              to: 55
+              icon: mdi:battery-50
+            - color: "#948100"
+              from: 56
+              to: 60
+              icon: mdi:battery-60
+            - color: "#8b8700"
+              from: 61
+              to: 65
+              icon: mdi:battery-60
+            - color: "#818d00"
+              from: 66
+              to: 70
+              icon: mdi:battery-70
+            - color: "#769200"
+              from: 71
+              to: 75
+              icon: mdi:battery-70
+            - color: "#6a9700"
+              from: 76
+              to: 80
+              icon: mdi:battery-80
+            - color: "#5d9c00"
+              from: 81
+              to: 85
+              icon: mdi:battery-80
+            - color: "#4da100"
+              from: 86
+              to: 90
+              icon: mdi:battery-90
+            - color: "#39a500"
+              from: 91
+              to: 95
+              icon: mdi:battery-90
+            - color: "#15a911"
+              from: 96
+              to: 100
+              icon: mdi:battery
+          style: |
+            bar-card-currentbar, bar-card-current, bar-card-backgroundbar {
+
+                height: 5px !important;
+                margin-top: 30px;
+            }
+            ha-card {
+                background: none;
+                box-shadow: none;
+            }
+            ha-icon{
+                color: white !important;
+            }
+            bar-card-iconbar {
+                margin-bottom: 10px;
+            }
+          animation:
+            state: "on"
+            speed: "2"
+        filter:
+          include:
+            - attributes:
+                device_class: battery
+              domain: sensor
+        sort:
+          exclude: []
+          method: state
+          numeric: true
+        show_empty: false
+
+      - type: custom:auto-entities
+        show_empty: false
+        card:
+          type: custom:mushroom-chips-card
+        card_param: chips
+        filter:
+          include:
+            - attributes:
+                device_class: battery
+              domain: binary_sensor
+              options:
+                type: light
+                content_info: name
+                tap_action:
+                  action: more-info
+                double_tap_action:
+                  action: none

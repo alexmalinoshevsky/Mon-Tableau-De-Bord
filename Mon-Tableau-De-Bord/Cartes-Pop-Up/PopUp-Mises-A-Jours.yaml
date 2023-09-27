@@ -1,0 +1,1021 @@
+# PopUp Mises à jours
+
+type: custom:vertical-stack-in-card
+card_mod:
+    style: |
+     ha-card {
+      box-shadow: 0 0 0 2px gray;
+     }
+cards:
+   - type: horizontal-stack
+     cards:
+      - type: custom:button-card
+        entity: update.home_assistant_core_update
+        icon: mdi:home-assistant
+        size: 50px
+        name: HA CORE
+        aspect_ratio: 1.1/1
+        styles:
+          card:
+            - color: var(--text-medium-color)
+            - padding-left: 10px
+            - border-radius: 20px
+            - padding: 5%
+            - font-size: 14px
+            - text-transform: capitalize
+            - border-radius: 0px
+            - size: 50px
+          grid:
+            - grid-template-areas: '"i i" "n n" "cpu cpu" "ram ram" "sd sd"'
+            - grid-template-columns: 1fr 1fr
+            - grid-template-rows: 1fr min-content min-content min-content min-content
+          name:
+            - font-weight: bold
+            - font-size: 12px
+            - align-self: middle
+            - justify-self: start
+            - padding-bottom: 4px
+            - color: var(--text-color)
+          icon:
+            - color: |
+                [[[
+                  if (entity.state == 'on') return 'red';
+                  return 'rgb(31, 111, 235)';
+                ]]]
+            - width: 45%
+            - animation: >
+                [[[ if (entity.state == 'on') return 'blink 2s ease infinite';
+                ]]]
+          custom_fields:
+            cpu:
+              - '--text-color-sensor': >-
+                  [[[if
+                  (states['update.home_assistant_core_update'].attributes.latest_version
+                  !=
+                  states['update.home_assistant_core_update'].attributes.installed_version)
+                  return "red";else return "green"]]]
+              - padding-bottom: 2px
+              - justify-self: start
+            ram:
+              - padding-bottom: 2px
+              - justify-self: start
+        custom_fields:
+          cpu: |
+            [[[
+              return `<ha-icon icon="mdi:home-assistant" style="width: 16px; height: 16px; color: rgb(31, 111, 235);"></ha-icon>
+              <span>Disponible: <span style="color: var(--text-color-sensor);">${states['update.home_assistant_core_update'].attributes.latest_version}</span></span>`
+            ]]]
+          ram: |
+            [[[
+              return `<ha-icon icon='mdi:home-assistant' style='width: 16px; height: 16px; color: rgb(31, 111, 235);'></ha-icon>
+              <span>Installée: <span style='color: var(--text-color-sensor);'>${states['update.home_assistant_core_update'].attributes.installed_version}</span></span>`
+            ]]]
+      - type: custom:button-card
+        entity: update.home_assistant_supervisor_update
+        icon: mdi:home-assistant
+        size: 50px
+        name: HA SUPERVISOR
+        aspect_ratio: 1.1/1
+        styles:
+          card:
+            - color: var(--text-medium-color)
+            - padding-left: 10px
+            - border-radius: 20px
+            - padding: 5%
+            - font-size: 14px
+            - text-transform: capitalize
+            - border-radius: 0px
+            - size: 50px
+          grid:
+            - grid-template-areas: '"i i" "n n" "cpu cpu" "ram ram" "sd sd"'
+            - grid-template-columns: 1fr 1fr
+            - grid-template-rows: 1fr min-content min-content min-content min-content
+          name:
+            - font-weight: bold
+            - font-size: 12px
+            - align-self: middle
+            - justify-self: start
+            - padding-bottom: 4px
+            - color: var(--text-color)
+          icon:
+            - color: |
+                [[[
+                  if (entity.state == 'on') return 'red';
+                  return 'rgb(31, 111, 235)';
+                ]]]
+            - width: 45%
+            - animation: >
+                [[[ if (entity.state == 'on') return 'blink 2s ease infinite';
+                ]]]
+          custom_fields:
+            cpu:
+              - '--text-color-sensor': >-
+                  [[[if
+                  (states['update.home_assistant_supervisor_update'].attributes.latest_version
+                  !=
+                  states['update.home_assistant_supervisor_update'].attributes.installed_version)
+                  return "red";else return "green"]]]
+              - padding-bottom: 2px
+              - justify-self: start
+            ram:
+              - padding-bottom: 2px
+              - justify-self: start
+        custom_fields:
+          cpu: |
+            [[[
+              return `<ha-icon icon="mdi:home-assistant" style="width: 16px; height: 16px; color: rgb(31, 111, 235);"></ha-icon>
+              <span>Disponible: <span style="color: var(--text-color-sensor);">${states['update.home_assistant_supervisor_update'].attributes.latest_version}</span></span>`
+            ]]]
+          ram: |
+            [[[
+              return `<ha-icon icon='mdi:home-assistant' style='width: 16px; height: 16px; color: rgb(31, 111, 235);'></ha-icon>
+              <span>Installée: <span style='color: var(--text-color-sensor);'>${states['update.home_assistant_supervisor_update'].attributes.installed_version}</span></span>`
+            ]]]
+      - type: custom:button-card
+        entity: update.home_assistant_operating_system_update
+        icon: mdi:home-assistant
+        size: 50px
+        name: HA OS
+        aspect_ratio: 1.1/1
+        styles:
+          card:
+            - color: var(--text-medium-color)
+            - padding-left: 10px
+            - border-radius: 20px
+            - padding: 5%
+            - font-size: 14px
+            - text-transform: capitalize
+            - border-radius: 0px
+            - size: 50px
+          grid:
+            - grid-template-areas: '"i i" "n n" "cpu cpu" "ram ram" "sd sd"'
+            - grid-template-columns: 1fr 1fr
+            - grid-template-rows: 1fr min-content min-content min-content min-content
+          name:
+            - font-weight: bold
+            - font-size: 12px
+            - align-self: middle
+            - justify-self: start
+            - padding-bottom: 4px
+            - color: var(--text-color)
+          icon:
+            - color: |
+                [[[
+                  if (entity.state == 'on') return 'red';
+                  return 'rgb(31, 111, 235)';
+                ]]]
+            - width: 45%
+            - animation: >
+                [[[ if (entity.state == 'on') return 'blink 2s ease infinite';
+                ]]]
+          custom_fields:
+            cpu:
+              - '--text-color-sensor': >-
+                  [[[if
+                  (states['update.home_assistant_operating_system_update'].attributes.latest_version
+                  !=
+                  states['update.home_assistant_operating_system_update'].attributes.installed_version)
+                  return "red";else return "green"]]]
+              - padding-bottom: 2px
+              - justify-self: start
+            ram:
+              - padding-bottom: 2px
+              - justify-self: start
+        custom_fields:
+          cpu: |
+            [[[
+              return `<ha-icon icon="mdi:home-assistant" style="width: 16px; height: 16px; color: rgb(31, 111, 235);"></ha-icon>
+              <span>Disponible: <span style="color: var(--text-color-sensor);">${states['update.home_assistant_operating_system_update'].attributes.latest_version}</span></span>`
+            ]]]
+          ram: |
+            [[[
+              return `<ha-icon icon='mdi:home-assistant' style='width: 16px; height: 16px; color: rgb(31, 111, 235);'></ha-icon>
+              <span>Installée: <span style='color: var(--text-color-sensor);'>${states['update.home_assistant_operating_system_update'].attributes.installed_version}</span></span>`
+            ]]]
+            
+##############################################################
+   - type: custom:text-divider-row
+     text: MODULES
+     align: center
+   - type: grid
+     square: true
+     columns: 4
+     cards:
+     
+      - type: custom:button-card
+        entity: update.weatherflow_to_mqtt_update
+        color: rgb(31, 111, 235)
+        aspect_ratio: 1/1
+        name: WeatherFlow
+        show_icon: false
+        show_entity_picture: true
+        entity_picture: /local/images/weatherflow.png
+        show_label: true
+        label: |
+          [[[ 
+            if (states['update.weatherflow_to_mqtt_update'].state == "on") return '<font color="red">Mise à jour</font>';
+            else return '<font color="green">À jour</font>';
+          ]]]
+        state:
+          - value: 'on'
+            styles:
+              state:
+                - color: red
+          - value: 'off'
+            styles:
+              state:
+                - color: green
+        styles:
+          card:
+            - padding: 0.2em
+            - '--mdc-ripple-color': rgb(68, 115, 158)
+            - '--mdc-ripple-press-opacity': 0.5
+            - transition: true
+            - font-size: 18px
+          icon:
+            - opacity: 1
+            - animation: >
+                [[[ if (entity.state == 'on') return 'blink 2s ease infinite';
+                ]]]            
+          name:
+            - font-weight: bold
+            - font-size: 0.85em
+            - white-space: normal
+          state:
+            - font-size: 0.75em
+            - white-space: normal
+          label:
+            - font-size: 0.75em
+            - white-space: normal
+        card_mod:
+          style: |
+            ha-card {
+              top: -10px !important;
+            }
+      - type: custom:button-card
+        entity: update.file_editor_update
+        color: rgb(31, 111, 235)
+        aspect_ratio: 1/1
+        name: Éditeur
+        show_icon: false
+        show_entity_picture: true
+        entity_picture: /local/images/fileeditor.png
+        show_label: true
+        label: |
+          [[[ 
+            if (states['update.file_editor_update'].state == "on") return '<font color="red">Mise à jour</font>';
+            else return '<font color="green">À jour</font>';
+          ]]]
+        state:
+          - value: 'on'
+            styles:
+              state:
+                - color: red
+          - value: 'off'
+            styles:
+              state:
+                - color: green
+        styles:
+          card:
+            - padding: 0.2em
+            - '--mdc-ripple-color': rgb(68, 115, 158)
+            - '--mdc-ripple-press-opacity': 0.5
+            - transition: true
+            - font-size: 18px
+          icon:
+            - opacity: 1
+            - animation: >
+                [[[ if (entity.state == 'on') return 'blink 2s ease infinite';
+                ]]]            
+          name:
+            - font-weight: bold
+            - font-size: 0.85em
+            - white-space: normal
+          state:
+            - font-size: 0.75em
+            - white-space: normal
+          label:
+            - font-size: 0.75em
+            - white-space: normal
+        card_mod:
+          style: |
+            ha-card {
+              top: -10px !important;
+            }
+      - type: custom:button-card
+        entity: update.studio_code_server_update
+        color: rgb(31, 111, 235)
+        aspect_ratio: 1/1
+        name: Studio Code
+        show_icon: false
+        show_entity_picture: true
+        entity_picture: /local/images/studiocode.png
+        show_label: true
+        label: |
+          [[[ 
+            if (states['update.studio_code_server_update'].state == "on") return '<font color="red">Mise à jour</font>';
+            else return '<font color="green">À jour</font>';
+          ]]]
+        state:
+          - value: 'on'
+            styles:
+              state:
+                - color: red
+          - value: 'off'
+            styles:
+              state:
+                - color: green
+        styles:
+          card:
+            - padding: 0.2em
+            - '--mdc-ripple-color': rgb(68, 115, 158)
+            - '--mdc-ripple-press-opacity': 0.5
+            - transition: true
+            - font-size: 18px
+          icon:
+            - opacity: 1
+            - animation: >
+                [[[ if (entity.state == 'on') return 'blink 2s ease infinite';
+                ]]]            
+          name:
+            - font-weight: bold
+            - font-size: 0.85em
+            - white-space: normal
+          state:
+            - font-size: 0.75em
+            - white-space: normal
+          label:
+            - font-size: 0.75em
+            - white-space: normal
+        card_mod:
+          style: |
+            ha-card {
+              top: -10px !important;
+            }
+      - type: custom:button-card
+        entity: update.home_assistant_google_drive_backup_update
+        color: rgb(31, 111, 235)
+        aspect_ratio: 1/1
+        name: Google Backup
+        show_icon: false
+        show_entity_picture: true
+        entity_picture: /local/images/google.png
+        show_label: true
+        label: |
+          [[[ 
+            if (states['update.home_assistant_google_drive_backup_update'].state == "on") return '<font color="red">Mise à jour</font>';
+            else return '<font color="green">À jour</font>';
+          ]]]
+        state:
+          - value: 'on'
+            styles:
+              state:
+                - color: red
+          - value: 'off'
+            styles:
+              state:
+                - color: green
+        styles:
+          card:
+            - padding: 0.2em
+            - '--mdc-ripple-color': rgb(68, 115, 158)
+            - '--mdc-ripple-press-opacity': 0.5
+            - transition: true
+            - font-size: 18px
+          icon:
+            - opacity: 1
+            - animation: >
+                [[[ if (entity.state == 'on') return 'blink 2s ease infinite';
+                ]]]            
+          name:
+            - font-weight: bold
+            - font-size: 0.85em
+            - white-space: normal
+          state:
+            - font-size: 0.75em
+            - white-space: normal
+          label:
+            - font-size: 0.75em
+            - white-space: normal
+        card_mod:
+          style: |
+            ha-card {
+              top: -10px !important;
+            }
+      - type: custom:button-card
+        entity: update.ssh_web_terminal_update
+        color: rgb(31, 111, 235)
+        aspect_ratio: 1/1
+        name: Terminal SSH
+        show_icon: false
+        show_entity_picture: true
+        entity_picture: /local/images/terminal.png
+        show_label: true
+        label: |
+          [[[ 
+            if (states['update.ssh_web_terminal_update'].state == "on") return '<font color="red">Mise à jour</font>';
+            else return '<font color="green">À jour</font>';
+          ]]]
+        state:
+          - value: 'on'
+            styles:
+              state:
+                - color: red
+          - value: 'off'
+            styles:
+              state:
+                - color: green
+        styles:
+          card:
+            - padding: 0.2em
+            - '--mdc-ripple-color': rgb(68, 115, 158)
+            - '--mdc-ripple-press-opacity': 0.5
+            - transition: true
+            - font-size: 18px
+          icon:
+            - opacity: 1
+            - animation: >
+                [[[ if (entity.state == 'on') return 'blink 2s ease infinite';
+                ]]]            
+          name:
+            - font-weight: bold
+            - font-size: 0.85em
+            - white-space: normal
+          state:
+            - font-size: 0.75em
+            - white-space: normal
+          label:
+            - font-size: 0.75em
+            - white-space: normal
+        card_mod:
+          style: |
+            ha-card {
+              top: -10px !important;
+            }
+      - type: custom:button-card
+        entity: update.mosquitto_broker_update
+        color: rgb(31, 111, 235)
+        name: Mosquitto
+        aspect_ratio: 1/1
+        show_icon: false
+        show_entity_picture: true
+        entity_picture: /local/images/mosquitto.png
+        show_label: true
+        label: |
+          [[[ 
+            if (states['update.mosquitto_broker_update'].state == "on") return '<font color="red">Mise à jour</font>';
+            else return '<font color="green">À jour</font>';
+          ]]]
+        state:
+          - value: 'on'
+            styles:
+              state:
+                - color: red
+          - value: 'off'
+            styles:
+              state:
+                - color: green
+        styles:
+          card:
+            - padding: 0.2em
+            - '--mdc-ripple-color': rgb(68, 115, 158)
+            - '--mdc-ripple-press-opacity': 0.5
+            - transition: true
+            - font-size: 18px
+          icon:
+            - opacity: 1
+            - animation: >
+                [[[ if (entity.state == 'on') return 'blink 2s ease infinite';
+                ]]]            
+          name:
+            - font-weight: bold
+            - font-size: 0.85em
+            - white-space: normal
+          state:
+            - font-size: 0.75em
+            - white-space: normal
+          label:
+            - font-size: 0.75em
+            - white-space: normal
+        card_mod:
+          style: |
+            ha-card {
+              top: -10px !important;
+            }
+      - type: custom:button-card
+        entity: update.hydroqc_add_on_update
+        color: rgb(31, 111, 235)
+        name: HydroQC
+        aspect_ratio: 1/1
+        show_icon: false
+        show_entity_picture: true
+        entity_picture: /local/mes_images/hydro-quebec.svg
+        show_label: true
+        label: |
+          [[[ 
+            if (states['update.hydroqc_add_on_update'].state == "on") return '<font color="red">Mise à jour</font>';
+            else return '<font color="green">À jour</font>';
+          ]]]
+        state:
+          - value: 'on'
+            styles:
+              state:
+                - color: red
+          - value: 'off'
+            styles:
+              state:
+                - color: green
+        styles:
+          card:
+            - padding: 0.2em
+            - '--mdc-ripple-color': rgb(68, 115, 158)
+            - '--mdc-ripple-press-opacity': 0.5
+            - transition: true
+            - font-size: 18px
+          icon:
+            - opacity: 1
+            - animation: >
+                [[[ if (entity.state == 'on') return 'blink 2s ease infinite';
+                ]]]            
+          name:
+            - font-weight: bold
+            - font-size: 0.85em
+            - white-space: normal
+          state:
+            - font-size: 0.75em
+            - white-space: normal
+          label:
+            - font-size: 0.75em
+            - white-space: normal
+        card_mod:
+          style: |
+            ha-card {
+              top: -10px !important;
+            }
+      - type: custom:button-card
+        entity: update.zigbee2mqtt_update
+        color: rgb(31, 111, 235)
+        name: Zigbee2mqtt
+        aspect_ratio: 1/1
+        show_icon: false
+        show_entity_picture: true
+        entity_picture: /local/images/z2m.png
+        show_label: true
+        label: |
+          [[[ 
+            if (states['update.zigbee2mqtt_update'].state == "on") return '<font color="red">Mise à jour</font>';
+            else return '<font color="green">À jour</font>';
+          ]]]
+        state:
+          - value: 'on'
+            styles:
+              state:
+                - color: red
+          - value: 'off'
+            styles:
+              state:
+                - color: green
+        styles:
+          card:
+            - padding: 0.2em
+            - '--mdc-ripple-color': rgb(68, 115, 158)
+            - '--mdc-ripple-press-opacity': 0.5
+            - transition: true
+            - font-size: 18px
+          icon:
+            - opacity: 1
+            - animation: >
+                [[[ if (entity.state == 'on') return 'blink 2s ease infinite';
+                ]]]            
+          name:
+            - font-weight: bold
+            - font-size: 0.85em
+            - white-space: normal
+          state:
+            - font-size: 0.75em
+            - white-space: normal
+          label:
+            - font-size: 0.75em
+            - white-space: normal
+        card_mod:
+          style: |
+            ha-card {
+              top: -10px !important;
+            }
+
+##############################################################
+   - type: custom:text-divider-row
+     text: APPAREILS
+     align: center
+   - type: grid
+     square: true
+     columns: 4
+     cards:
+      - type: custom:button-card
+        entity: update.capteur_atelier
+        color: rgb(31, 111, 235)
+        name: Atelier
+        aspect_ratio: 1/1
+        show_icon: false
+        show_entity_picture: true
+        entity_picture: /local/images/thirdreality.png
+        show_label: true
+        label: |
+          [[[ 
+            if (states['update.capteur_atelier'].state == "on") return '<font color="red">Mise à jour</font>';
+            else return '<font color="green">À jour</font>';
+          ]]]
+        state:
+          - value: 'on'
+            styles:
+              state:
+                - color: red
+          - value: 'off'
+            styles:
+              state:
+                - color: green
+        styles:
+          card:
+            - padding: 0.2em
+            - '--mdc-ripple-color': rgb(68, 115, 158)
+            - '--mdc-ripple-press-opacity': 0.5
+            - transition: true
+            - font-size: 18px
+          icon:
+            - opacity: 1
+            - animation: >
+                [[[ if (entity.state == 'on') return 'blink 2s ease infinite';
+                ]]]            
+          name:
+            - font-weight: bold
+            - font-size: 0.85em
+            - white-space: normal
+          state:
+            - font-size: 0.75em
+            - white-space: normal
+          label:
+            - font-size: 0.75em
+            - white-space: normal
+        card_mod:
+          style: |
+            ha-card {
+              top: -10px !important;
+            }
+
+      - type: custom:button-card
+        entity: update.capteur_chambre_invites
+        color: rgb(31, 111, 235)
+        name: Chambre Invités
+        aspect_ratio: 1/1
+        show_icon: false
+        show_entity_picture: true
+        entity_picture: /local/images/thirdreality.png
+        show_label: true
+        label: |
+          [[[ 
+            if (states['update.capteur_chambre_invites'].state == "on") return '<font color="red">Mise à jour</font>';
+            else return '<font color="green">À jour</font>';
+          ]]]
+        state:
+          - value: 'on'
+            styles:
+              state:
+                - color: red
+          - value: 'off'
+            styles:
+              state:
+                - color: green
+        styles:
+          card:
+            - padding: 0.2em
+            - '--mdc-ripple-color': rgb(68, 115, 158)
+            - '--mdc-ripple-press-opacity': 0.5
+            - transition: true
+            - font-size: 18px
+          icon:
+            - opacity: 1
+            - animation: >
+                [[[ if (entity.state == 'on') return 'blink 2s ease infinite';
+                ]]]            
+          name:
+            - font-weight: bold
+            - font-size: 0.85em
+            - white-space: normal
+          state:
+            - font-size: 0.75em
+            - white-space: normal
+          label:
+            - font-size: 0.75em
+            - white-space: normal
+        card_mod:
+          style: |
+            ha-card {
+              top: -10px !important;
+            }
+
+      - type: custom:button-card
+        entity: update.capteur_salle_a_manger
+        color: rgb(31, 111, 235)
+        name: Salle À Manger
+        aspect_ratio: 1/1
+        show_icon: false
+        show_entity_picture: true
+        entity_picture: /local/images/thirdreality.png
+        show_label: true
+        label: |
+          [[[ 
+            if (states['update.capteur_salle_a_manger'].state == "on") return '<font color="red">Mise à jour</font>';
+            else return '<font color="green">À jour</font>';
+          ]]]
+        state:
+          - value: 'on'
+            styles:
+              state:
+                - color: red
+          - value: 'off'
+            styles:
+              state:
+                - color: green
+        styles:
+          card:
+            - padding: 0.2em
+            - '--mdc-ripple-color': rgb(68, 115, 158)
+            - '--mdc-ripple-press-opacity': 0.5
+            - transition: true
+            - font-size: 18px
+          icon:
+            - opacity: 1
+            - animation: >
+                [[[ if (entity.state == 'on') return 'blink 2s ease infinite';
+                ]]]            
+          name:
+            - font-weight: bold
+            - font-size: 0.85em
+            - white-space: normal
+          state:
+            - font-size: 0.75em
+            - white-space: normal
+          label:
+            - font-size: 0.75em
+            - white-space: normal
+        card_mod:
+          style: |
+            ha-card {
+              top: -10px !important;
+            }
+            
+      - type: custom:button-card
+        entity: update.capteur_salle_deau
+        color: rgb(31, 111, 235)
+        name: "Salle D'Eau"
+        aspect_ratio: 1/1
+        show_icon: false
+        show_entity_picture: true
+        entity_picture: /local/images/thirdreality.png
+        show_label: true
+        label: |
+          [[[ 
+            if (states['update.capteur_salle_deau'].state == "on") return '<font color="red">Mise à jour</font>';
+            else return '<font color="green">À jour</font>';
+          ]]]
+        state:
+          - value: 'on'
+            styles:
+              state:
+                - color: red
+          - value: 'off'
+            styles:
+              state:
+                - color: green
+        styles:
+          card:
+            - padding: 0.2em
+            - '--mdc-ripple-color': rgb(68, 115, 158)
+            - '--mdc-ripple-press-opacity': 0.5
+            - transition: true
+            - font-size: 18px
+          icon:
+            - opacity: 1
+            - animation: >
+                [[[ if (entity.state == 'on') return 'blink 2s ease infinite';
+                ]]]            
+          name:
+            - font-weight: bold
+            - font-size: 0.85em
+            - white-space: normal
+          state:
+            - font-size: 0.75em
+            - white-space: normal
+          label:
+            - font-size: 0.75em
+            - white-space: normal
+        card_mod:
+          style: |
+            ha-card {
+              top: -10px !important;
+            }
+            
+      - type: custom:button-card
+        entity: update.cuisine_update_available  
+        color: rgb(31, 111, 235)
+        name: Cuisine
+        aspect_ratio: 1/1
+        show_icon: false
+        show_entity_picture: true
+        entity_picture: /local/images/sensibo.png
+        show_label: true
+        label: |
+          [[[ 
+            if (states['update.cuisine_update_available'].state == "on") return '<font color="red">Mise à jour</font>';
+            else return '<font color="green">À jour</font>';
+          ]]]
+        state:
+          - value: 'on'
+            styles:
+              state:
+                - color: red
+          - value: 'off'
+            styles:
+              state:
+                - color: green
+        styles:
+          card:
+            - padding: 0.2em
+            - '--mdc-ripple-color': rgb(68, 115, 158)
+            - '--mdc-ripple-press-opacity': 0.5
+            - transition: true
+            - font-size: 18px
+          icon:
+            - opacity: 1
+            - animation: >
+                [[[ if (entity.state == 'on') return 'blink 2s ease infinite';
+                ]]]            
+          name:
+            - font-weight: bold
+            - font-size: 0.85em
+            - white-space: normal
+          state:
+            - font-size: 0.75em
+            - white-space: normal
+          label:
+            - font-size: 0.75em
+            - white-space: normal
+        card_mod:
+          style: |
+            ha-card {
+              top: -10px !important;
+            }
+      - type: custom:button-card
+        entity: update.salle_de_repos_update_available
+        color: rgb(31, 111, 235)
+        name: Salle de Repos
+        aspect_ratio: 1/1
+        show_icon: false
+        show_entity_picture: true
+        entity_picture: /local/images/sensibo.png
+        show_label: true
+        label: |
+          [[[ 
+            if (states['update.salle_de_repos_update_available'].state == "on") return '<font color="red">Mise à jour</font>';
+            else return '<font color="green">À jour</font>';
+          ]]]
+        state:
+          - value: 'on'
+            styles:
+              state:
+                - color: red
+          - value: 'off'
+            styles:
+              state:
+                - color: green
+        styles:
+          card:
+            - padding: 0.2em
+            - '--mdc-ripple-color': rgb(68, 115, 158)
+            - '--mdc-ripple-press-opacity': 0.5
+            - transition: true
+            - font-size: 18px
+          icon:
+            - opacity: 1
+            - animation: >
+                [[[ if (entity.state == 'on') return 'blink 2s ease infinite';
+                ]]]            
+          name:
+            - font-weight: bold
+            - font-size: 0.85em
+            - white-space: normal
+          state:
+            - font-size: 0.75em
+            - white-space: normal
+          label:
+            - font-size: 0.75em
+            - white-space: normal
+        card_mod:
+          style: |
+            ha-card {
+              top: -10px !important;
+            }
+            
+      - type: custom:button-card
+        entity: update.philips_mq_detecteur_de_mouvements
+        color: rgb(31, 111, 235)
+        name: Salle de Repos
+        aspect_ratio: 1/1
+        show_icon: false
+        show_entity_picture: true
+        entity_picture: /local/images/philips.png
+        show_label: true
+        size: 100%
+        label: |
+          [[[ 
+            if (states['update.philips_mq_detecteur_de_mouvements'].state == "on") return '<font color="red">Mise à jour</font>';
+            else return '<font color="green">À jour</font>';
+          ]]]
+        state:
+          - value: 'on'
+            styles:
+              state:
+                - color: red
+          - value: 'off'
+            styles:
+              state:
+                - color: green
+        styles:
+          card:
+            - padding: 0.2em
+            - '--mdc-ripple-color': rgb(68, 115, 158)
+            - '--mdc-ripple-press-opacity': 0.5
+            - transition: true
+            - font-size: 18px
+          icon:
+            - opacity: 1
+            - animation: >
+                [[[ if (entity.state == 'on') return 'blink 2s ease infinite';
+                ]]]            
+          name:
+            - font-weight: bold
+            - font-size: 0.85em
+            - white-space: normal
+          state:
+            - font-size: 0.75em
+            - white-space: normal
+          label:
+            - font-size: 0.75em
+            - white-space: normal
+        card_mod:
+          style: |
+            ha-card {
+              top: -10px !important;
+            }
+
+      - type: custom:button-card
+        entity: sensor.hacs
+        color: rgb(31, 111, 235)
+        name: HACS
+        aspect_ratio: 1/1
+        show_icon: false
+        show_entity_picture: true
+        entity_picture: /local/images/HACS.PNG
+        show_label: true
+        size: 70%
+        label: |
+          [[[ 
+            if (states['sensor.hacs'].state > "0") return '<font color="red">Mise à jour</font>';
+            else return '<font color="green">À jour</font>';
+          ]]]
+        state:
+          - value: 'on'
+            styles:
+              state:
+                - color: red
+          - value: 'off'
+            styles:
+              state:
+                - color: green
+        styles:
+          card:
+            - padding: 0.2em
+            - '--mdc-ripple-color': rgb(68, 115, 158)
+            - '--mdc-ripple-press-opacity': 0.5
+            - transition: true
+            - font-size: 18px
+          icon:
+            - opacity: 1
+            - animation: >
+                [[[ if (entity.state > '0') return 'blink 2s ease infinite';
+                ]]]            
+          name:
+            - font-weight: bold
+            - font-size: 0.85em
+            - white-space: normal
+          state:
+            - font-size: 0.75em
+            - white-space: normal
+          label:
+            - font-size: 0.75em
+            - white-space: normal
+        card_mod:
+          style: |
+            ha-card {
+              top: -10px !important;
+            }

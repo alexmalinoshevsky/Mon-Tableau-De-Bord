@@ -1,0 +1,63 @@
+type: custom:vertical-stack-in-card
+card_mod:
+    style: |
+     ha-card {
+      box-shadow: 0 0 0 2px gray;
+     }
+cards:
+
+  - type: picture-elements
+    image: /local/mes_images/saisons.jpg
+    elements:
+      - type: conditional
+        conditions:
+          - entity: sensor.season
+            state: summer
+        elements:
+          - type: image
+            image: /local/mes_images/circle.png
+            style:
+              top: 63.2%
+              left: 24%
+              width: 10%
+              border: 2px solid red
+              border-radius: 60%
+      - type: conditional
+        conditions:
+          - entity: sensor.season
+            state: autumn
+        elements:
+          - type: image
+            image: /local/mes_images/circle.png
+            style:
+              top: 67%
+              left: 67.5%
+              width: 10%
+              border: 2px solid red
+              border-radius: 55%
+      - type: conditional
+        conditions:
+          - entity: sensor.season
+            state: winter
+        elements:
+          - type: image
+            image: /local/mes_images/circle.png
+            style:
+              top: 30.2%
+              left: 67.8%
+              width: 10%
+              border: 2px solid red
+              border-radius: 55%
+      - type: conditional
+        conditions:
+          - entity: sensor.season
+            state: spring
+        elements:
+          - type: image
+            image: /local/mes_images/circle.png
+            style:
+              top: 29%
+              left: 35.7%
+              width: 10%
+              border: 2px solid red
+              border-radius: 55%

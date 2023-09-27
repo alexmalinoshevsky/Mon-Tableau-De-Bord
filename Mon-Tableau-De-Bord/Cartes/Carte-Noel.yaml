@@ -1,0 +1,94 @@
+type: custom:mushroom-chips-card
+chips:
+  - type: template
+    icon: mdi:pine-tree
+    icon_color: green
+  - type: template
+    icon: mdi:star-four-points
+    icon_color: yellow
+    card_mod:
+      style: |
+        ha-card {
+          position: absolute;
+          left: 0px;
+          top: 1px;
+          background: none !important;
+          box-shadow: none !important;
+          border: none !important;
+        }
+  - type: template
+    icon: mdi:grain
+    icon_color: red
+    card_mod:
+      style: |
+        ha-card {
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          background: none !important;
+          box-shadow: none !important;
+          border: none !important;
+        }
+  - type: template
+    icon: mdi:gift
+    icon_color: red
+    card_mod:
+      style: |
+        ha-card {
+          position: absolute;
+          left: 0px;
+          top: 4px;
+          background: none !important;
+          box-shadow: none !important;
+          border: none !important;
+        }
+card_mod:
+  style:
+    mushroom-template-chip:nth-child(2)$: |
+      ha-state-icon {
+        animation: star 8s ease infinite alternate;
+      }
+      @keyframes star {
+        0%, 100% { transform: translateY(-10px) rotate(0deg) scale(0.4); }
+        50% { transform: translateY(-10px) rotate(360deg) scale(0.6); }
+      }
+    mushroom-template-chip:nth-child(3)$: |
+      ha-state-icon {
+        animation: flash 2s steps(1) infinite, lights 2s infinite;
+        clip-path: polygon(51% 15%, 24% 74%, 74% 74%);
+      }
+      @keyframes flash {
+        50% { transform: rotateY(180deg); }
+      }
+      @keyframes lights {
+        0%, 100% {color: rgb(var(--rgb-red)); }
+        6.25% { color: rgb(var(--rgb-deep-orange)); }
+        12.5% { color: rgb(var(--rgb-orange)); }
+        18.75% { color: rgb(var(--rgb-amber)); }
+        25% { color: rgb(var(--rgb-yellow)); }
+        31.25% { color: rgb(var(--rgb-lime)); }
+        37.5% { color: rgb(var(--rgb-light-green)); }
+        43.75% { color: rgb(var(--rgb-green)); }
+        50% { color: rgb(var(--rgb-teal)); }
+        56.25% { color: rgb(var(--rgb-cyan)); }
+        62.5% { color: rgb(var(--rgb-light-blue)); }
+        68.75% { color: rgb(var(--rgb-blue)); }
+        75% { color: rgb(var(--rgb-indigo)); }
+        81.25% { color: rgb(var(--rgb-deep-purple)); }
+        87.5% { color: rgb(var(--rgb-purple)); }
+        93.75% { color: rgb(var(--rgb-pink)); }
+      }
+    mushroom-template-chip:nth-child(4)$: |
+      ha-state-icon {
+        --chip-icon-size: 10px;
+        animation: surprise 4s ease infinite;
+      }
+      @keyframes surprise {
+        0%, 20%, 100% { transform: translateY(0); }
+        2.5% { transform: translateY(-2px) rotate(-27deg); }
+        5% { transform: translateY(-2px) rotate(21deg); }
+        7.5% { transform: translateY(-2px) rotate(-15deg); }
+        10% { transform: translateY(-2px) rotate(9deg); }
+        12.5% { transform: translateY(0); }
+        15% { transform: translateY(-1.2px) }
+      }

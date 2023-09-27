@@ -1,0 +1,21 @@
+# PopUp Aspiratuer Rommba
+type: custom:vertical-stack-in-card
+card_mod:
+    style: |
+     ha-card {
+      box-shadow: 0 0 0 2px gray;
+     }
+cards:
+  - type: custom:vacuum-card
+    entity: vacuum.roomba_1
+    image: /local/mes_images/Roomba9.png
+    show_name: true
+    show_status: true
+    show_toolbar: true
+
+  - type: custom:vacuum-card
+    entity: vacuum.roomba_2
+    image: /local/mes_images/Roomba9.png
+    show_name: true
+    show_status: true
+    show_toolbar: true

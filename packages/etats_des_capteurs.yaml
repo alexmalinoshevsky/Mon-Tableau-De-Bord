@@ -1,0 +1,199 @@
+# Affuchage de l'états des caméras et des thermostats.
+
+sensor:
+
+# Extérieure
+    
+  - platform: template
+    sensors:
+      ajout_etat_camera_allee:
+        unique_id: "ajout_etat_camera_allee"
+        friendly_name: "État de la caméra allée"
+        value_template:  >
+          {% if is_state('binary_sensor.blink_allee_camera_armed', 'on') %} 
+            CAOK                      
+          {% else %}
+            PASOK
+          {% endif %}         
+
+  - platform: template
+    sensors:
+      ajout_etat_camera_galerie_arriere:
+        unique_id: "ajout_etat_camera_galerie_arriere"
+        friendly_name: "État de la caméra galerie arrière"
+        value_template:  >
+          {% if is_state('binary_sensor.blink_galerie_arriere_camera_armed', 'on') %} 
+            CAOK                      
+          {% else %}
+            PASOK
+          {% endif %}         
+          
+  - platform: template
+    sensors:
+      ajout_etat_camera_galerie_avant:
+        unique_id: "ajout_etat_camera_galerie_avant"
+        friendly_name: "État de la caméra galerie avant"
+        value_template:  >
+          {% if is_state('binary_sensor.blink_galerie_avant_camera_armed', 'on') %} 
+            CAOK                      
+          {% else %}
+            PASOK
+          {% endif %}         
+
+## Atelier
+
+  - platform: template
+    sensors:
+     ajout_etat_thermostat_atelier:
+        unique_id: "ajout_etat_thermostat_atelier"
+        friendly_name: "Ajout Etat thermostat atelier"
+        icon_template: mdi:coffee-maker
+        value_template: "{{ state_attr('climate.sinope_thermostat_atelier','hvac_action') }}"
+        
+## Bureau
+
+  - platform: template
+    sensors:
+     ajout_etat_thermostat_bureau:
+        unique_id: "ajout_etat_thermostat_bureau"
+        friendly_name: "Ajout Etat thermostat bureau"
+        icon_template: mdi:coffee-maker
+        value_template: "{{ state_attr('climate.sinope_thermostat_bureau','hvac_action') }}"
+
+## Chambre invités
+
+  - platform: template
+    sensors:
+     ajout_etat_thermostat_chambre_invites:
+        unique_id: "ajout_etat_thermostat_chambre_invites"
+        friendly_name: "Ajout Etat thermostat chambre invites"
+        icon_template: mdi:coffee-maker
+        value_template: "{{ state_attr('climate.sinope_thermostat_chambre_invites','hvac_action') }}"
+
+## Chambre des maîtres
+
+  - platform: template
+    sensors:
+     ajout_etat_thermostat_chambre_maitres:
+        unique_id: "ajout_etat_thermostat_chambre_maitres"
+        friendly_name: "Ajout Etat thermostat chambre maitres"
+        icon_template: mdi:coffee-maker
+        value_template: "{{ state_attr('climate.sinope_thermostat_chambre_maitres','hvac_action') }}"
+
+## Cusine
+        
+  - platform: template
+    sensors:
+     ajout_etat_thermostat_cuisine:
+        unique_id: "ajout_etat_thermostat_cuisine"
+        friendly_name: "Ajout Etat thermostat cuisine"
+        icon_template: mdi:coffee-maker
+        value_template: "{{ state_attr('climate.sinope_thermostat_cuisine','hvac_action') }}"
+        
+  - platform: template
+    sensors:
+      ajout_etat_camera_cuisine:
+        unique_id: "ajout_etat_camera_cuisine"
+        friendly_name: "État de la caméra cuisine"
+        value_template:  >
+          {% if is_state('binary_sensor.blink_cuisine_camera_armed', 'on') %} 
+            CAOK                      
+          {% else %}
+            PASOK
+          {% endif %}         
+          
+## Salon    
+
+  - platform: template
+    sensors:
+     ajout_etat_thermostat_salon:
+        unique_id: "ajout_etat_thermostat_salon"
+        friendly_name: "Ajout Etat thermostat salon"
+        icon_template: mdi:coffee-maker
+        value_template: "{{ state_attr('climate.sinope_thermostat_salon','hvac_action') }}"
+        
+  - platform: template
+    sensors:
+      ajout_etat_camera_salon:
+        unique_id: "ajout_etat_camera_salon"
+        friendly_name: "État de la caméra salon"
+        value_template:  >
+          {% if is_state('binary_sensor.blink_salon_camera_armed', 'on') %} 
+            CAOK                      
+          {% else %}
+            PASOK
+          {% endif %}         
+        
+## Salle d'eau
+        
+  - platform: template
+    sensors:
+     ajout_etat_thermostat_salle_deau:
+        unique_id: "ajout_etat_thermostat_salle_deau"
+        friendly_name: "Ajout Etat thermostat salle deau"
+        icon_template: mdi:coffee-maker
+        value_template: "{{ state_attr('climate.sinope_thermostat_salle_deau','hvac_action') }}"
+
+## Salle de bain maîtres
+
+  - platform: template
+    sensors:
+     ajout_sensor_temperature_salle_de_bain_maitres:
+        unique_id: "ajout_sensor_temperature__salle_dde_bain_maitres"
+        friendly_name: "Ajout Température Salle de bain maîtres"
+        icon_template: mdi:thermometer
+        device_class: temperature
+        unit_of_measurement: "°C"
+        value_template: "{{ state_attr('climate.sinope_thermostat_salle_bain','current_temperature') | round(0) }}"
+        
+  - platform: template
+    sensors:
+     ajout_sensor_humidite_salle_de_bain_maitres:
+        unique_id: "ajout_sensor_humidite_salle_de_bain_maitress"
+        friendly_name: "Ajout Humidité Salle de bain maîtres"
+        icon_template: mdi:water-percent
+        device_class: humidity
+        unit_of_measurement: "%"
+        value_template: "{{ states('sensor.sensibo_humiditee_courante_salle_de_repos') | round(0) }}"
+        
+  - platform: template
+    sensors:
+     ajout_etat_thermostat_salle_de_bain_maitres:
+        unique_id: "ajout_etat_thermostat_salle_de_bain_maitres"
+        friendly_name: "Ajout Etat thermostat salle de bain maitres"
+        icon_template: mdi:coffee-maker
+        value_template: "{{ state_attr('climate.sinope_thermostat_salle_bain','hvac_action') }}"
+        
+## Salle de repos
+
+  - platform: template
+    sensors:
+     ajout_etat_thermostat_salle_repos:
+        unique_id: "ajout_etat_thermostat_salle_repos"
+        friendly_name: "Ajout Etat thermostat salle repos"
+        icon_template: mdi:coffee-maker
+        value_template: "{{ state_attr('climate.sinope_thermostat_salle_repos','hvac_action') }}"
+    
+## Salle familiale
+
+  - platform: template
+    sensors:
+     ajout_etat_thermostat_salle_familiale:
+        unique_id: "ajout_etat_thermostat_salle_familiale"
+        friendly_name: "Ajout Etat thermostat salle familiale"
+        icon_template: mdi:coffee-maker
+        value_template: "{{ state_attr('climate.sinope_thermostat_salle_familiale','hvac_action') }}"
+        
+  - platform: template
+    sensors:
+      ajout_etat_camera_sous_sol:
+        unique_id: "ajout_etat_camera_sous_sol"
+        friendly_name: "État de la caméra sous-sol"
+        value_template:  >
+          {% if is_state('binary_sensor.blink_sous_sol_camera_armed', 'on') %} 
+            CAOK                      
+          {% else %}
+            PASOK
+          {% endif %}         
+        
+ 

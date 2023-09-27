@@ -1,0 +1,80 @@
+tool_mjt_pieces_icons:
+  template:
+    type: tool
+    defaults: 
+      - sak_tool_mjt_pieces_icons_index: 0
+      - sak_tool_mjt_pieces_icons_cx: 70
+      - sak_tool_mjt_pieces_icons_cy: 70
+  tool:
+    type: 'icon'
+    position:
+      cx: '[[sak_tool_mjt_pieces_icons_cx]]'
+      cy: '[[sak_tool_mjt_pieces_icons_cy]]'
+      align: center
+      icon_size: 15
+    entity_index: '[[sak_tool_mjt_pieces_icons_index]]'
+    animations:
+      - state: 'off'
+        styles:
+          icon:
+            fill: var(--nova-gradient-color-03) # Vert
+      - state: 'on'
+        styles:
+          icon:
+            fill: var(--nova-gradient-color-06)  # Jaune
+      - state: 'cool'
+        styles:
+          icon:
+            fill: var(--nova-gradient-color-11) # Algue marine
+      - state: 'heat'
+        styles:
+          icon:
+            fill: var(--nova-gradient-color-12)  # Orange
+      - state: 'idle'
+        styles:
+          icon:
+            fill: var(--nova-gradient-color-03) # Vert
+      - state: 'heating'
+        styles:
+          icon:
+            fill: var(--nova-gradient-color-06)  # Jaune
+      - state: 'standby'
+        styles:
+          icon:
+            fill: var(--nova-gradient-color-03) # Vert
+      - state: 'OK'
+        styles:
+          icon:
+            fill: var(--nova-gradient-color-03) # Vert
+      - state: 'CAOK'
+        styles:
+          icon:
+            fill: var(--nova-gradient-color-06)  # Jaune
+      - state: 'playing'
+        styles:
+          icon:
+            fill: var(--nova-gradient-color-06)  # Jaune
+      - state: 'locked'
+        styles:
+          icon:
+            fill: var(--nova-gradient-color-03) # Vert
+      - state: 'docked'
+        styles:
+          icon:
+            fill: var(--nova-gradient-color-03) # Vert                    
+      - state: 'cleaning'
+        styles:
+          icon:
+            fill: var(--nova-gradient-color-06)  # Jaune
+      - state: 'armed_away'
+        styles:
+          icon:
+            fill: var(--nova-gradient-color-03) # Vert                    
+      - state: 'printing'
+        styles:
+          icon:
+            fill: var(--nova-gradient-color-06)  # Jaune
+    styles:
+      icon:
+        fill: var(--nova-gradient-color-09) # Rouge
+        pointer-events: none

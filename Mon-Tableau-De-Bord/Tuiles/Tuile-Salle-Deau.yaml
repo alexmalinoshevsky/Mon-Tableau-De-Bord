@@ -1,0 +1,37 @@
+    type: 'custom:swiss-army-knife-card'
+    entities:
+    - entity: sensor.capteur_salle_deau_temperature 
+      decimals: '0'
+      name: "Toilette"
+    - entity: sensor.capteur_salle_deau_humidity
+      decimals: '0'
+    - entity: sensor.ajout_etat_thermostat_salle_deau    
+      icon: 'mdi:radiator'
+    - entity: light.sinope_lumieres_salle_deau   
+      icon: 'hue:ceiling-adore-alt' 
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: vacuum.roomba_1    
+      icon: 'mdi:robot-vacuum' 
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp   
+      icon: 'mdi:sans'
+    - entity: binary_sensor.sinope_mq_detecteur_deau_salle_eau_water_leak    
+      icon: 'mdi:leak' 
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    - entity: input_boolean.temp    
+      icon: 'mdi:sans'
+    layout:
+      template:
+        name: sak_layout_mjt_tuile_piece
+        variables:
+          - sak_layout_mjt_tuile_piece_image: '/local/mes_images/toilette.svg'
+          - sak_layout_mjt_tuile_piece_navigation: 'sous-vue-piece-salle-deau'

@@ -1,0 +1,89 @@
+# Vue Informations
+
+theme: MonTableau
+title: Informations
+path: vue-page-Information
+icon: ios:informations#fullcolor
+type: panel
+badges: []
+cards:
+  - type: custom:dwains-flexbox-card
+    items_classes: "col-xs-12"
+    cards:
+    
+      - type: custom:vertical-stack-in-card
+        item_classes: "col-xs-12 col-sm-10"
+        cards:
+
+          - type: custom:text-divider-row
+            text: "Informations"
+            align: left
+
+          # Personnes cartes Pop-Up
+
+          - type: horizontal-stack
+            cards:
+              - !include ../Cartes-Pop-Up/PopUp-Personne-Valerie.yaml
+              - !include ../Cartes-Pop-Up/PopUp-Personne-Brigitte.yaml
+#              - !include ../Cartes/Carte-Noel.yaml
+              - !include ../Cartes-Pop-Up/PopUp-Personne-Claude.yaml
+              - !include ../Cartes-Pop-Up/PopUp-Personne-Michel.yaml
+
+          # Informations météo, astres et saison
+
+          - !include  ../Cartes/Carte-Informations-Meteo.yaml
+
+          # Collectes des déchets
+          
+          - type: horizontal-stack
+            cards:
+          
+              - !include  ../Cartes/Carte-Collectes-Dechets.yaml
+              - !include  ../Cartes/Carte-Collectes-Recuperation.yaml
+              - !include  ../Cartes/Carte-Collectes-Compostage.yaml
+              
+      - type: custom:vertical-stack-in-card
+        item_classes: "col-xs-12 col-sm-2"
+        cards:
+        
+          # Contrôles
+          - type: custom:text-divider-row
+            text: "Contrôles"
+            align: left
+ 
+          - !include ../Cartes/Carte-Controles.yaml
+
+      # Tuiles pour les pièces
+
+      - type: vertical-stack
+        cards:
+        
+          - type: horizontal-stack
+            cards:
+            
+              - !include ../Tuiles/Tuile-Salon.yaml
+              - !include ../Tuiles/Tuile-Cuisine.yaml
+              - !include ../Tuiles/Tuile-Salle-A-Manger.yaml
+              - !include ../Tuiles/Tuile-Salle-Deau.yaml
+              - !include ../Tuiles/Tuile-Chambre-Maitres.yaml
+              - !include ../Tuiles/Tuile-Bureau.yaml
+
+          - type: horizontal-stack
+            cards:
+            
+               - !include ../Tuiles/Tuile-Salle-De-Bain-Maitres.yaml
+               - !include ../Tuiles/Tuile-Salle-De-Repos.yaml
+               - !include ../Tuiles/Tuile-Salle-Familiale.yaml
+               - !include ../Tuiles/Tuile-Chambre-Invites.yaml
+               - !include ../Tuiles/Tuile-Atelier.yaml
+               - !include ../Tuiles/Tuile-Exterieur.yaml
+ 
+              
+              
+              
+              
+              
+
+
+
+

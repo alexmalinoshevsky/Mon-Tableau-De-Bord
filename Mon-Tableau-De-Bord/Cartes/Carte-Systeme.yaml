@@ -1,0 +1,611 @@
+# Carte Système
+
+type: custom:stack-in-card
+mode: vertical
+keep:
+  box_shadow: true
+  margin: true
+  border_radius: true
+  background: true
+  outer_padding: false
+cards:
+  - type: vertical-stack
+    cards:
+      - type: picture
+        image: /local/images/RPI.PNG
+        card_mod:
+          style: |
+            ha-card {
+              border-radius: 0px;
+            }
+      - type: entities
+        entities:
+          - entity: sensor.ipv4_address_eth0
+            type: custom:multiple-entity-row
+            name: Adresses IP
+            show_state: false
+            entities:
+              - entity: sensor.ipv4_address_eth0
+                name: Interne
+              - entity: sensor.arris_tg2472g_router_external_ip
+                name: Externe
+        card_mod:
+          style: |
+            .card-content div {
+              margin-top: -15px !important;
+              margin-left: -15px !important;
+              margin-bottom: 0px  !important;
+            }
+            :host {
+              font-size: 15px;
+            }
+            ha-card {
+              --mdc-icon-size: 28px;
+            }
+      - type: entities
+        entities:
+          - entity: sensor.last_boot
+            type: custom:multiple-entity-row
+            show_state: false
+            entities:
+              - entity: sensor.last_boot
+                name: Dernier démarrager
+                format: total
+              - entity: sensor.temps_online
+                name: Actif
+                format: total
+            name: Allumé depuis
+            icon: phu:raspberry-pi
+        card_mod:
+          style: |
+            .card-content div {
+              margin-top: -40px !important;
+              margin-left: -15px !important;
+              margin-bottom: 25px  !important;
+            }
+            :host {
+              font-size: 15px;
+            }
+            ha-card {
+              --mdc-icon-size: 28px;
+            }
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:bar-card
+            entities:
+              - entity: sensor.processor_use
+                name: Utilisation CPU
+                icon: phu:intel-cpu
+                color: rgb(68, 115, 158)
+                height: 27px
+                min: "0"
+                max: "100"
+                target: "90"
+                positions:
+                  name: inside
+                  indicator: "off"
+            card_mod:
+              style: |
+                ha-card {
+                  top: -31px;
+                  margin-top: -20px;
+                  margin-left: -15px;
+                  margin-right: -5px;
+                }
+                bar-card-currentbar, bar-card-backgroundbar {
+                  border-radius: 4px;
+                }
+                ha-icon {
+                  --mdc-icon-size: 30px;
+                }
+                bar-card-name {
+                  margin: 2px;
+                }
+          - type: custom:bar-card
+            entities:
+              - entity: sensor.processor_temperature
+                name: Température CPU
+                icon: mdi:thermometer
+                height: 27px
+                color: orange
+                min: "1"
+                max: "80"
+                target: "65"
+                positions:
+                  name: inside
+                  indicator: "off"
+            card_mod:
+              style: |
+                ha-card {
+                  top: -31px;
+                  margin-top: -20px;
+                  margin-left: -15px;
+                  margin-right: -5px;
+                  background: none;
+                }
+                bar-card-currentbar, bar-card-backgroundbar {
+                  border-radius: 4px;
+                }
+                ha-icon {
+                  --mdc-icon-size: 28px;
+                }
+                bar-card-name {
+                  margin: 2px;
+                }
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:bar-card
+            entities:
+              - entity: sensor.memory_use_percent
+                name: Mémoire utilisée
+                icon: phu:ram-memory
+                height: 27px
+                color: red
+                min: "0"
+                max: "100"
+                target: "90"
+                positions:
+                  name: inside
+                  indicator: "off"
+            card_mod:
+              style: |
+                ha-card {
+                  margin-top: -62px;
+                  margin-left: -15px;
+                  margin-right: -5px;
+                }
+                ha-icon {
+                  --mdc-icon-size: 30px;
+                }
+                bar-card-currentbar, bar-card-backgroundbar {
+                  border-radius: 4px;
+                }
+                bar-card-name {
+                  margin: 2px;
+                }
+          - type: custom:bar-card
+            entities:
+              - entity: sensor.memory_free
+                name: Mémoire Libre
+                icon: phu:ram-memory
+                color: rgb(31, 111, 235)
+                height: 27px
+                min: "1"
+                max: "3700"
+                target: "300"
+                positions:
+                  name: inside
+                  indicator: "off"
+            card_mod:
+              style: |
+                ha-card {
+                  margin-top: -62px;
+                  margin-left: -15px;
+                  margin-right: -5px;
+                }
+                ha-icon {
+                  --mdc-icon-size: 30px;
+                }
+                bar-card-currentbar, bar-card-backgroundbar {
+                  border-radius: 4px;
+                }
+                bar-card-name {
+                  margin: 2px;
+                }
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:bar-card
+            entities:
+              - entity: sensor.network_in_eth0
+                name: Eth0
+                icon: fas:download
+                height: 27px
+                color: green
+                min: "1"
+                max: "1000000"
+                positions:
+                  name: inside
+                  indicator: "off"
+                decimal: "1"
+                unit_of_measurement: Mo
+            card_mod:
+              style: |
+                ha-card {
+                  margin-top: -32px;
+                  margin-left: -15px;
+                  margin-right: -5px;
+                }
+                ha-icon {
+                  --mdc-icon-size: 24px;
+                }
+                bar-card-currentbar, bar-card-backgroundbar {
+                  border-radius: 4px;
+                }
+                bar-card-name {
+                  margin: 2px;
+                }
+          - type: custom:bar-card
+            entities:
+              - entity: sensor.network_out_eth0
+                name: Eth0
+                icon: fas:upload
+                color: rgb(250, 0, 1)
+                height: 27px
+                min: "1"
+                max: "1000000"
+                positions:
+                  name: inside
+                  indicator: "off"
+                decimal: "1"
+                unit_of_measurement: Mo
+            card_mod:
+              style: |
+                ha-card {
+                  margin-top: -32px;
+                  margin-left: -15px;
+                  margin-right: -5px;
+                }
+                ha-icon {
+                  --mdc-icon-size: 24px;
+                }
+                bar-card-currentbar, bar-card-backgroundbar {
+                  border-radius: 4px;
+                }
+                bar-card-name {
+                  margin: 2px;
+                }
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:bar-card
+            entities:
+              - entity: sensor.disk_use
+                name: SSD 1t
+                icon: phu:seagate-ssd
+                height: 27px
+                color: grey
+                min: "0"
+                max: "100"
+                target: "75"
+                positions:
+                  name: inside
+                  indicator: "off"
+            card_mod:
+              style: |
+                ha-card {
+                  margin-top: -33px;
+                  margin-left: -15px;
+                  margin-right: -5px;
+                }
+                bar-card-currentbar, bar-card-backgroundbar {
+                  border-radius: 4px;
+                }
+                ha-icon {
+                  --mdc-icon-size: 28px;
+                }
+                bar-card-name {
+                  margin: 2px;
+                }
+  - type: horizontal-stack
+    cards:
+      - type: custom:bar-card
+        entities:
+          - entity: sensor.network_throughput_in_eth0
+            name: Débit
+            height: 35px
+            color: green
+            icon: fas:download
+        decimal: "2"
+        unit_of_measurement: Mbit/s
+        positions:
+          icon: outside
+          indicator: "off"
+          minmax: "off"
+          value: inside
+        entity_row: true
+        card_mod:
+          style: |
+            ha-card {
+              font-size: 14px;
+              --bar-card-border-radius: 5px;
+              margin-top: -18px;
+              margin-left: 8px;
+              margin-right: 2px;
+              --mdc-icon-size: 20px;
+            }
+      - type: custom:bar-card
+        entities:
+          - entity: sensor.network_throughput_out_eth0
+            name: Débit
+            icon: fas:upload
+            height: 35px
+            color: rgb(250, 0, 1)
+        decimal: "2"
+        unit_of_measurement: Mbit/s
+        positions:
+          icon: outside
+          indicator: "off"
+          minmax: "off"
+          value: inside
+        entity_row: true
+        card_mod:
+          style: |
+            ha-card {
+              font-size: 14px;
+              --bar-card-border-radius: 5px;
+              margin-top: -18px;
+              margin-left: 8px;
+              margin-right: 2px;
+              --mdc-icon-size: 20px;
+            }
+  - type: custom:uptime-card
+    entity: binary_sensor.rpi_power_status
+    title_template: RPi4 Puissance
+    ok: "off"
+    ko: "on"
+    bar:
+      amount: 48
+      round: 1
+      height: 29
+    hours_to_show: 48
+    init:
+      animation: raise
+    color:
+      title: rgb(68, 115, 158)
+      ko: rgb(250, 0, 1)
+      ok: green
+    title_adaptive_color: false
+    icon_adaptive_color: true
+    tooltip_adaptive_color: true
+    status_adaptive_color: true
+    show:
+      header: true
+      title: true
+      timeline: true
+      footer: true
+      average: true
+    tooltip:
+      hour24: true
+      animation: true
+    alias:
+      ok: OK
+      ko: Danger
+    tap_action:
+      action: more-info
+    alignment:
+      icon_first: true
+      status: left
+      tooltip_first: true
+      header: spaced
+    card_mod:
+    style: |
+      card_mod:
+         style: |
+           :host {
+             font-size: 15px;
+           }
+           ha-card {
+             top: -17px;
+             margin-left: -7px;
+             margin-bottom: -25px;
+             background: none;
+           }
+  - type: custom:popup-card
+    entity: sensor.processor_use
+    style: |-
+    --popup-border-radius: 10px;
+    --popup-background-color: transparent;
+    --popup-border-width: 0px;
+    --popup-min-width: 500px;
+    --popup-max-width: 600px;
+    card:
+      type: custom:mini-graph-card
+      name: Utilisation du CPU
+      icon: phu:intel-cpu
+      height: 101
+      hours_to_show: 24
+      points_per_hour: 2
+      hour24: true
+      line_width: 3
+      show:
+        fill: true
+        graph: line
+        icon: true
+        name: true
+        state: true
+        labels: false
+        extrema: true
+        average: true
+        icon_adaptive_color: true
+      entities:
+        - entity: sensor.processor_use
+      align_icon: right
+      align_state: center
+      line_color: rgb(68, 115, 158)
+      font_size: 100
+      animate: false
+      card_mod:
+        style: |
+          ha-card .header.flex .icon {
+            color: rgb(31, 111, 235);
+            --mdc-icon-size: 40px;
+          }
+          .fill {
+            fill: white;
+            opacity: 1 !important;
+          }
+  - type: custom:popup-card
+    entity: sensor.processor_temperature
+    style: |-
+    --popup-border-radius: 10px;
+    --popup-background-color: transparent;
+    --popup-border-width: 0px;
+    --popup-min-width: 500px;
+    --popup-max-width: 600px;
+    card:
+      type: custom:mini-graph-card
+      name: CPU Température
+      height: 10
+      hours_to_show: 24
+      points_per_hour: 2
+      hour24: true
+      line_width: 6
+      show:
+        fill: true
+        graph: line
+        icon: true
+        name: true
+        state: true
+        labels: false
+        extrema: true
+        average: true
+        icon_adaptive_color: true
+      entities:
+        - entity: sensor.processor_temperature
+      align_icon: right
+      align_state: center
+      font_size: 100
+      animate: false
+      card_mod:
+        style: |
+          ha-card .header.flex .icon {
+            color: rgb(31, 111, 235);
+            --mdc-icon-size: 37px;
+          }
+          .fill {
+            fill: white;
+            opacity: 1 !important;
+          }
+  #################################################
+  - type: custom:popup-card
+    entity: sensor.memory_use_percent
+    style: |-
+      --popup-border-radius: 10px;
+      --popup-background-color: transparent;
+      --popup-border-width: 0px;
+      --popup-min-width: 500px;
+      --popup-max-width: 600px;
+    card:
+      type: custom:mini-graph-card
+      name: Mémoire utilisée
+      icon: phu:ram-memory
+      height: 100
+      hours_to_show: 24
+      points_per_hour: 2
+      hour24: true
+      line_width: 6
+      show:
+        fill: false
+        graph: line
+        icon: true
+        name: true
+        state: true
+        labels: false
+        extrema: true
+        average: true
+        icon_adaptive_color: true
+        labels_secondary: true
+      entities:
+        - entity: sensor.memory_use_percent
+          name: Utilisation de la Mémoire
+        - color: rgb(31, 111, 235)
+          entity: sensor.memory_free
+          name: Mémoire Libre
+          show_line: true
+          show_points: true
+          show_label: true
+          show_legend: true
+          y_axis: secondary
+      align_icon: right
+      align_state: left
+      line_color: rgb(250, 0, 1)
+      font_size: 90
+      animate: false
+      card_mod:
+        style: |
+          ha-card .header.flex .icon {
+            color: rgb(31, 111, 235);
+            --mdc-icon-size: 40px;
+          }
+          ha-card .graph .graph__container .graph__labels {
+            color: rgb(31, 111, 235);
+          }
+          ha-card .states.flex::after {
+            content: "Libre: {{states('sensor.memory_free')}} MiB";
+            white-space: pre;
+            background-color: rgba(31, 111, 235,0.4);
+            padding: 5px 5px 5px 4px;
+            border-radius: 4px;
+          }
+  - type: custom:popup-card
+    entity: sensor.memory_free
+    style: |-
+      --popup-border-radius: 10px;
+      --popup-background-color: transparent;
+      --popup-border-width: 0px;
+      --popup-min-width: 500px;
+      --popup-max-width: 600px;
+    card:
+      type: custom:mini-graph-card
+      name: Mémoire utiliséee
+      icon: phu:ram-memory
+      height: 100
+      hours_to_show: 24
+      points_per_hour: 2
+      hour24: true
+      line_width: 6
+      show:
+        fill: false
+        graph: line
+        icon: true
+        name: true
+        state: true
+        labels: false
+        extrema: true
+        average: true
+        icon_adaptive_color: true
+        labels_secondary: true
+      entities:
+        - entity: sensor.memory_use_percent
+          name: Mémoire utiliséee
+        - color: rgb(31, 111, 235)
+          entity: sensor.memory_free
+          name: Mémoire Libre
+          show_line: true
+          show_points: true
+          show_label: true
+          show_legend: true
+          y_axis: secondary
+      align_icon: right
+      align_state: left
+      line_color: rgb(250, 0, 1)
+      font_size: 90
+      animate: false
+      card_mod:
+        style: |
+          ha-card .header.flex .icon {
+            color: rgb(31, 111, 235);
+            --mdc-icon-size: 40px;
+          }
+          ha-card .graph .graph__container .graph__labels {
+            color: rgb(31, 111, 235);
+          }
+          ha-card .states.flex::after {
+            content: "Libre: {{states('sensor.memory_free')}} MiB";
+            white-space: pre;
+            background-color: rgba(31, 111, 235,0.4);
+            padding: 5px 5px 5px 4px;
+            border-radius: 4px;
+          }
+card_mod:
+  style: |
+    ha-card {
+      box-shadow: 0 0 0 1px gray;
+    }

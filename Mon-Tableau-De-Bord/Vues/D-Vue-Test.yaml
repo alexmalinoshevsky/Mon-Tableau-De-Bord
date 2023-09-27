@@ -1,0 +1,46 @@
+theme: MonTableau
+title: Test
+path: vue-page-tests
+icon: mdi:test-tube
+type: panel
+badges: []
+cards:
+
+           -  type: vertical-stack
+              items_classes: "col-xs-12"
+              cards:     
+              
+                - type: custom:vertical-stack-in-card
+                  items_classes: "col-xs-12 col-sm-8"
+                  cards:
+              
+                    - type: 'custom:swiss-army-knife-card'
+                      entities:
+                        - entity: sensor.electricite_production_total         # Production d'électricité
+                          name: 'Production'
+                          decimals: 0
+                        - entity: sensor.demande_electricite_hydro            # Demande d'électricité
+                          name: 'Demande'
+                          decimals: 0
+                        - entity: sensor.electricite_production_hydraulique   # Production hydraulique
+                          name: 'Hydrolique'
+                          decimals: 0
+                        - entity: sensor.electricite_production_eolien        # Production éolienne
+                          name: 'Éolienne'
+                          decimals: 0
+                        - entity: sensor.electricite_production_solaire       # Production solaire
+                          name: 'Solaire'
+                          decimals: 0
+                        - entity: sensor.electricite_production_autres        # Production autre
+                          name: 'Autres'
+                          decimals: 0
+                      layout:
+                         template:
+                           name: sak_layout_mjt_hydro_quebec
+                           
+                - type: horizontal-stack
+                  items_classes: "col-xs-12 col-sm-4"
+                  cards:
+                      
+                    - !include ../Cartes/Carte-Energie-Productions-Demandes.yaml
+                    - !include ../Cartes/Carte-Energie-Mensuel.yaml
